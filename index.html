@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Grove Incident | Entry</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1216;
+    --ink: #f0e0bf;
+    --dim: #b39a6f;
+    --gold: #e6bb66;
+    --line: #3d3122;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: radial-gradient(circle at 20% 20%, #2a2417 0%, transparent 45%),
+      radial-gradient(circle at 80% 80%, #182129 0%, transparent 40%),
+      var(--bg);
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--ink);
+    padding: 20px;
+  }
+  .box {
+    width: min(680px, 92vw);
+    border: 1px solid var(--line);
+    padding: 28px;
+    background: rgba(10, 12, 15, 0.84);
+  }
+  h1 {
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(44px, 10vw, 92px);
+    line-height: 0.9;
+    letter-spacing: 0.03em;
+    color: var(--gold);
+  }
+  p {
+    margin: 14px 0 0;
+    color: var(--dim);
+    line-height: 1.65;
+  }
+  .links {
+    margin-top: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  a {
+    text-decoration: none;
+    color: #13100a;
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    padding: 12px 14px;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+  }
+  a.secondary {
+    background: transparent;
+    color: var(--gold);
+  }
+</style>
+</head>
+<body>
+  <main class="box">
+    <h1>The Grove Incident</h1>
+    <p>Interactive invite for Sunday, 1 March 2026. Unlock your character dossier before the game starts at 8:00 PM.</p>
+    <div class="links">
+      <a href="./minisite.html">Open Invite Experience</a>
+      <a class="secondary" href="./poster.html">Open Poster</a>
+      <a class="secondary" href="./game_script.md">Open Game Script</a>
+    </div>
+  </main>
+</body>
+</html>

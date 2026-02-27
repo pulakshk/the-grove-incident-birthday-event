@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Grove Incident — March 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-dim: #7A5F28;
+    --black: #080706;
+    --off-black: #0E0D0B;
+    --smoke: #1A1814;
+    --text: #D4C4A0;
+    --text-dim: #7A7060;
+  }
+
+  body {
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Cormorant Garamond', serif;
+    padding: 40px 20px;
+  }
+
+  .poster {
+    width: 680px;
+    min-height: 960px;
+    background: var(--off-black);
+    position: relative;
+    overflow: hidden;
+    padding: 60px 56px 52px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #1E1C18;
+  }
+
+  /* Noise texture overlay */
+  .poster::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Gold smoke gradient at top */
+  .poster::after {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: -40px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(ellipse at center, rgba(201,168,76,0.10) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .smoke-right {
+    position: absolute;
+    bottom: -80px;
+    right: -60px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(ellipse at center, rgba(201,168,76,0.06) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* All content above effects */
+  .content { position: relative; z-index: 2; display: flex; flex-direction: column; height: 100%; }
+
+  /* Top rule */
+  .top-rule {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+  .top-rule .line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-dim), transparent); }
+  .top-rule .diamond {
+    width: 7px; height: 7px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  /* Case number / eyebrow */
+  .eyebrow {
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  /* Main title */
+  .title-block { text-align: center; margin-bottom: 10px; }
+
+  .title-the {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 22px;
+    color: var(--text-dim);
+    letter-spacing: 0.12em;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .title-main {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 86px;
+    line-height: 0.88;
+    color: var(--gold-light);
+    display: block;
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 80px rgba(201,168,76,0.2);
+  }
+
+  .title-incident {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 32px;
+    color: var(--text);
+    display: block;
+    letter-spacing: 0.08em;
+    margin-top: 6px;
+  }
+
+  /* Date band */
+  .date-band {
+    margin: 28px 0 24px;
+    border-top: 1px solid var(--gold-dim);
+    border-bottom: 1px solid var(--gold-dim);
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .date-band .date-item {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .date-band .sep { color: var(--gold-dim); font-size: 16px; }
+
+  /* Tagline */
+  .tagline {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--text-dim);
+    line-height: 1.5;
+    margin-bottom: 32px;
+    padding: 0 20px;
+  }
+  .tagline em { color: var(--text); font-style: normal; }
+
+  /* Lineup / floors section */
+  .floors {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 0;
+    margin-bottom: 32px;
+    border: 1px solid #252218;
+  }
+
+  .floor {
+    padding: 22px 24px;
+    position: relative;
+  }
+
+  .floor-divider {
+    background: linear-gradient(180deg, transparent, var(--gold-dim), transparent);
+    width: 1px;
+  }
+
+  .floor-number {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .floor-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gold-light);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .floor-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
+  .floor-tags {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    color: var(--gold-dim);
+    border: 1px solid #2A2620;
+    padding: 3px 8px;
+    text-transform: uppercase;
+  }
+
+  /* Schedule block */
+  .schedule {
+    margin-bottom: 32px;
+  }
+
+  .schedule-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .schedule-title::after { content: ''; flex: 1; height: 1px; background: #1E1C18; }
+
+  .schedule-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+
+  .sched-time {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--gold);
+    min-width: 52px;
+    flex-shrink: 0;
+  }
+
+  .sched-dot {
+    width: 4px; height: 4px;
+    background: var(--gold-dim);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-bottom: 2px;
+  }
+
+  .sched-event {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    color: var(--text);
+  }
+
+  .sched-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--text-dim);
+  }
+
+  /* Admission block */
+  .admission {
+    border: 1px solid #252218;
+    padding: 20px 24px;
+    margin-bottom: 28px;
+    position: relative;
+    background: rgba(201,168,76,0.02);
+  }
+
+  .admission::before {
+    content: '◆ ADMISSION POLICY ◆';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--off-black);
+    padding: 0 12px;
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.25em;
+    color: var(--gold-dim);
+    white-space: nowrap;
+  }
+
+  .admission-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+  }
+  .admission-row:last-child { margin-bottom: 0; }
+
+  .adm-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+
+  .adm-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    color: var(--text);
+    text-align: right;
+  }
+
+  .adm-note {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: var(--gold-dim);
+    letter-spacing: 0.1em;
+    margin-top: 12px;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* Murder mystery teaser */
+  .mystery-teaser {
+    border-left: 2px solid var(--gold-dim);
+    padding: 14px 20px;
+    margin-bottom: 28px;
+    background: rgba(201,168,76,0.025);
+  }
+
+  .mystery-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .mystery-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14.5px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  .mystery-text strong {
+    color: var(--text);
+    font-style: normal;
+  }
+
+  /* Address & details */
+  .bottom-info {
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid #1A1814;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .address-block .label {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.25em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .address-block .addr {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .host-block {
+    text-align: right;
+  }
+  .host-block .label {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.25em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .host-block .host-name {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--gold-light);
+  }
+  .host-block .host-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--text-dim);
+  }
+
+  /* Bottom rule */
+  .bottom-rule {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .bottom-rule .line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-dim), transparent); }
+  .bottom-rule .text {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.22em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* Decorative corner marks */
+  .corner { position: absolute; width: 20px; height: 20px; z-index: 3; }
+  .corner.tl { top: 20px; left: 20px; border-top: 1px solid var(--gold-dim); border-left: 1px solid var(--gold-dim); }
+  .corner.tr { top: 20px; right: 20px; border-top: 1px solid var(--gold-dim); border-right: 1px solid var(--gold-dim); }
+  .corner.bl { bottom: 20px; left: 20px; border-bottom: 1px solid var(--gold-dim); border-left: 1px solid var(--gold-dim); }
+  .corner.br { bottom: 20px; right: 20px; border-bottom: 1px solid var(--gold-dim); border-right: 1px solid var(--gold-dim); }
+
+  /* Subtle entrance animation */
+  .content > * {
+    animation: fadeUp 0.8s ease both;
+  }
+  .content > *:nth-child(1) { animation-delay: 0.05s; }
+  .content > *:nth-child(2) { animation-delay: 0.1s; }
+  .content > *:nth-child(3) { animation-delay: 0.18s; }
+  .content > *:nth-child(4) { animation-delay: 0.26s; }
+  .content > *:nth-child(5) { animation-delay: 0.34s; }
+  .content > *:nth-child(6) { animation-delay: 0.42s; }
+  .content > *:nth-child(7) { animation-delay: 0.5s; }
+  .content > *:nth-child(8) { animation-delay: 0.58s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+  <!-- Corner marks -->
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
+  <div class="smoke-right"></div>
+
+  <div class="content">
+
+    <!-- Top rule -->
+    <div class="top-rule">
+      <div class="line"></div>
+      <div class="diamond"></div>
+      <div class="line"></div>
+    </div>
+
+    <!-- Eyebrow -->
+    <div class="eyebrow">Case No. 27 &nbsp;·&nbsp; Grove A7, Sarjapur Road &nbsp;·&nbsp; Classified</div>
+
+    <!-- Title -->
+    <div class="title-block">
+      <span class="title-the">presents</span>
+      <span class="title-main">THE<br>GROVE</span>
+      <span class="title-incident">Incident</span>
+    </div>
+
+    <!-- Date band -->
+    <div class="date-band">
+      <span class="date-item">Sunday</span>
+      <span class="sep">·</span>
+      <span class="date-item">1st March 2026</span>
+      <span class="sep">·</span>
+      <span class="date-item">Doors: 5:00 PM</span>
+    </div>
+
+    <!-- Tagline -->
+    <div class="tagline">
+      One year ago, a founder died at a launch party.<br>
+      The product never shipped. <em>The cap table is still frozen.</em><br>
+      Tonight — the original guest list is called back.
+    </div>
+
+    <!-- Floors -->
+    <div class="floors">
+      <div class="floor">
+        <span class="floor-number">Lower Hall · Floor I</span>
+        <span class="floor-name">The Golden Era</span>
+        <span class="floor-desc">Where the deals were made and the stories got better with every glass.</span>
+        <div class="floor-tags">
+          <span class="tag">House Pot & Bar</span>
+          <span class="tag">Warm Vibes</span>
+          <span class="tag">Anthems</span>
+        </div>
+      </div>
+      <div class="floor-divider"></div>
+      <div class="floor">
+        <span class="floor-number">Upper Hall · Floor II</span>
+        <span class="floor-name">After Hours Hall</span>
+        <span class="floor-desc">Where the real conversations happen and the music doesn't ask questions.</span>
+        <div class="floor-tags">
+          <span class="tag">Low Light</span>
+          <span class="tag">Deep Cuts</span>
+          <span class="tag">No PRDs</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Schedule -->
+    <div class="schedule">
+      <div class="schedule-title">Programme of Events</div>
+
+      <div class="schedule-row">
+        <span class="sched-time">17:00</span>
+        <div class="sched-dot"></div>
+        <div>
+          <div class="sched-event">Doors Open — The Grove Goes Live</div>
+          <div class="sched-sub">MVP release. Bugs expected.</div>
+        </div>
+      </div>
+
+      <div class="schedule-row">
+        <span class="sched-time">20:00</span>
+        <div class="sched-dot"></div>
+        <div>
+          <div class="sched-event">The Briefing — All Guests Summoned</div>
+          <div class="sched-sub">Every suspect. One room. One question.</div>
+        </div>
+      </div>
+
+      <div class="schedule-row">
+        <span class="sched-time">21:00</span>
+        <div class="sched-dot"></div>
+        <div>
+          <div class="sched-event">The Verdict — Truth Comes Out</div>
+          <div class="sched-sub">Guilty parties drink. Innocents drink more.</div>
+        </div>
+      </div>
+
+      <div class="schedule-row">
+        <span class="sched-time">21:15</span>
+        <div class="sched-dot"></div>
+        <div>
+          <div class="sched-event">Series A Catering Arrives</div>
+          <div class="sched-sub">Food budget was cut. We pivoted to pizza.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Admission -->
+    <div class="admission">
+      <div class="admission-row">
+        <span class="adm-label">Pre-8pm entry</span>
+        <span class="adm-value">Free (bring yourself, that's enough)</span>
+      </div>
+      <div class="admission-row">
+        <span class="adm-label">After 8pm entry</span>
+        <span class="adm-value">Light BYOB top-up · 1-2 beers or similar</span>
+      </div>
+      <div class="admission-row">
+        <span class="adm-label">After-midnight arrivals</span>
+        <span class="adm-value">Explain yourself first</span>
+      </div>
+      <div class="adm-note">
+        House pot & bar setup + light BYOB top-up after 20:00 · RSVP via invite<br>
+        Suspects who arrive without contribution will be assigned extra charges in the game
+      </div>
+    </div>
+
+    <!-- Mystery teaser -->
+    <div class="mystery-teaser">
+      <div class="mystery-label">⚠ Confidential — Invitees Only</div>
+      <div class="mystery-text">
+        Your character dossier and case briefing will be delivered separately.<br>
+        <strong>Do not share. Do not lose it. Do not arrive without reading it.</strong><br>
+        You were at The Grove that night. You have a secret. We know.
+      </div>
+    </div>
+
+    <!-- Bottom info -->
+    <div class="bottom-info">
+      <div class="address-block">
+        <div class="label">Scene of the Crime</div>
+        <div class="addr">The Grove, A7<br>Sarjapur Road, Bengaluru</div>
+      </div>
+      <div class="host-block">
+        <div class="label">Hosted by</div>
+        <div class="host-name">Pulaksh Khimesara</div>
+        <div class="host-sub">Detective. Host. Birthday Boy.<br>Turning 27. Allegedly.</div>
+      </div>
+    </div>
+
+    <!-- Bottom rule -->
+    <div class="bottom-rule">
+      <div class="line"></div>
+      <div class="text">The Grove Incident · MMXXVI · Invite Only</div>
+      <div class="line"></div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

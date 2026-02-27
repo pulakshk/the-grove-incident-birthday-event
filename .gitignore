@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+Codex.dmg
+
+# Node / tooling
+node_modules/
+.wrangler/
+
+# Local secrets/config
+.env
+.env.*
+site-config.local.js
+
+# Logs
+*.log

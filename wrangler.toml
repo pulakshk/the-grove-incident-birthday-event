@@ -1,0 +1,4 @@
+name = "grove-character-proxy"
+main = "serverless/gemini-worker.js"
+compatibility_date = "2026-02-27"
+workers_dev = true
