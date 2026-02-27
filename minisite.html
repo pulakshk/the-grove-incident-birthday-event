@@ -499,9 +499,9 @@
       }
 
       .game-shell canvas {
-        height: 200px;
+        height: 280px;
         /* Force proportional height feeling on mobile */
-        object-fit: cover;
+        object-fit: contain;
       }
     }
   </style>
@@ -1303,9 +1303,12 @@
     function drawPlayer() {
       const p = playerBounds();
       const look = p.look;
+      const t = game.lastTs ? game.lastTs * 0.01 : 0;
 
+      // Hit flash
       if (game.hitCooldown > 0 && Math.floor(game.hitCooldown * 16) % 2 === 0) return;
 
+      // Shield overlay
       if (game.shieldTime > 0) {
         ctx.beginPath();
         ctx.arc(p.x + p.width / 2, p.y + p.height / 2, Math.max(p.width, p.height) * 0.85, 0, Math.PI * 2);
@@ -1315,37 +1318,79 @@
         ctx.stroke();
       }
 
-      ctx.fillStyle = look.suit;
-      ctx.fillRect(p.x, p.y, p.width, p.height);
-
-      ctx.fillStyle = '#e8d5b3';
       const headR = 6 + Math.min(4, game.age / 9);
+      const neckY = p.y - headR * 0.5;
+      const bodyH = p.height * 0.6;
+      const waistY = neckY + bodyH;
+      const isJumping = !game.player.onGround;
+
+      // Running animation angles
+      const runCycle = (t * game.speed * 0.03) % (Math.PI * 2);
+      const armAngle = isJumping ? -0.5 : Math.sin(runCycle) * 0.8;
+      const legAngle = isJumping ? 0.4 : Math.sin(runCycle) * 0.9;
+
+      ctx.save();
+
+      // 1. Right Arm (Back)
+      ctx.strokeStyle = look.suit;
+      ctx.lineWidth = 4;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(p.x + p.width / 2, neckY + 2);
+      ctx.lineTo(p.x + p.width / 2 - Math.sin(armAngle) * 8, neckY + 12);
+      ctx.stroke();
+
+      // 2. Right Leg (Back)
+      ctx.strokeStyle = '#2a1d0d';
+      ctx.beginPath();
+      ctx.moveTo(p.x + p.width / 2, waistY);
+      ctx.lineTo(p.x + p.width / 2 - Math.sin(legAngle) * 10, p.y + p.height);
+      ctx.stroke();
+
+      // 3. Torso
+      ctx.fillStyle = look.suit;
+      ctx.fillRect(p.x + p.width / 2 - 5, neckY, 10, bodyH);
+
+      // 4. Head
+      ctx.fillStyle = '#e8d5b3';
       ctx.beginPath();
       ctx.arc(p.x + p.width / 2, p.y - headR + 2, headR, 0, Math.PI * 2);
       ctx.fill();
 
-      ctx.fillStyle = '#2a1d0d';
-      ctx.fillRect(p.x + Math.floor(p.width * 0.25), p.y + 8, 3, 3);
+      // 5. Left Leg (Front)
+      ctx.strokeStyle = '#3a2d1d';
+      ctx.beginPath();
+      ctx.moveTo(p.x + p.width / 2, waistY);
+      ctx.lineTo(p.x + p.width / 2 + Math.sin(legAngle) * 10, p.y + p.height);
+      ctx.stroke();
 
+      // 6. Left Arm (Front)
+      ctx.strokeStyle = look.suit;
+      ctx.beginPath();
+      ctx.moveTo(p.x + p.width / 2, neckY + 2);
+      ctx.lineTo(p.x + p.width / 2 + Math.sin(armAngle) * 8, neckY + 12);
+      ctx.stroke();
+
+      // 7. Props
       if (look.prop === 'rattle') {
         ctx.fillStyle = '#f9c96f';
-        ctx.fillRect(p.x + p.width + 3, p.y + 10, 6, 6);
+        ctx.fillRect(p.x + p.width / 2 + Math.sin(armAngle) * 8 - 3, neckY + 10, 6, 6);
       }
       if (look.prop === 'bag') {
         ctx.fillStyle = '#4c5b7a';
-        ctx.fillRect(p.x - 7, p.y + 8, 6, 12);
+        ctx.fillRect(p.x + p.width / 2 - 8, neckY + 6, 6, 12);
       }
       if (look.prop === 'books') {
         ctx.fillStyle = '#7a4c93';
-        ctx.fillRect(p.x + p.width, p.y + 11, 7, 10);
+        ctx.fillRect(p.x + p.width / 2 + Math.sin(armAngle) * 8, neckY + 8, 7, 10);
       }
       if (look.prop === 'cap') {
         ctx.fillStyle = '#26313f';
-        ctx.fillRect(p.x + 3, p.y - headR - 5, p.width - 6, 3);
+        ctx.fillRect(p.x + p.width / 2 - headR + 1, p.y - headR - 5, headR * 2 + 3, 3);
       }
       if (look.prop === 'laptop') {
         ctx.fillStyle = '#576372';
-        ctx.fillRect(p.x + p.width + 2, p.y + 13, 9, 7);
+        ctx.fillRect(p.x + p.width / 2 + Math.sin(armAngle) * 8, neckY + 10, 9, 7);
       }
       if (look.prop === 'party') {
         ctx.fillStyle = '#ff9a6c';
