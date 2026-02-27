@@ -77,6 +77,7 @@ rsvpFields: {
 1. Open your GitHub Pages URL.
 2. Complete profile and game.
 3. Character dossier should appear without any API call.
-4. Click `Submit RSVP to Sheet`.
-5. Confirm row appears in your linked Google Sheet.
-6. Keep `RSVP Now` as backup in case direct submission is blocked on some browsers.
+4. Set RSVP status + ETA.
+5. Click the single `RSVP to Confirm` button.
+6. Confirm row appears in your linked Google Sheet.
+7. If direct submit is blocked by a browser, the site auto-opens the backup prefilled Google Form tab.

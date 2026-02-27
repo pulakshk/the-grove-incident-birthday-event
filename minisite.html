@@ -190,6 +190,11 @@
     justify-content: center;
   }
 
+  button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+
   button.ghost, .btn-link.ghost {
     background: transparent;
     color: var(--gold);
@@ -570,8 +575,7 @@
       </div>
 
       <div class="actions">
-        <a id="rsvp-btn" class="btn-link" target="_blank" rel="noopener noreferrer">RSVP Now</a>
-        <button id="rsvp-submit-btn">Submit RSVP to Sheet</button>
+        <button id="rsvp-btn">RSVP to Confirm</button>
         <button class="ghost" id="regen-btn">Shuffle Character Angle</button>
         <button class="ghost" id="replay-btn">Replay Unlock</button>
       </div>
@@ -591,7 +595,7 @@
       </div>
       <p class="note">House setup is available. BYOB is appreciated, especially after 8 PM.</p>
       <p class="error" id="api-error"></p>
-      <p class="ok" id="rsvp-note">RSVP link ready. Your name and role are prefilled.</p>
+      <p class="ok" id="rsvp-note"></p>
     </div>
   </section>
 
@@ -836,7 +840,6 @@
     storySynopsis2: document.getElementById('story-synopsis-2'),
     apiError: document.getElementById('api-error'),
     rsvpBtn: document.getElementById('rsvp-btn'),
-    rsvpSubmitBtn: document.getElementById('rsvp-submit-btn'),
     rsvpStatus: document.getElementById('rsvp-status'),
     rsvpEta: document.getElementById('rsvp-eta'),
     rsvpNote: document.getElementById('rsvp-note'),
@@ -1871,6 +1874,10 @@
       return;
     }
 
+    const oldLabel = EL.rsvpBtn.textContent;
+    EL.rsvpBtn.disabled = true;
+    EL.rsvpBtn.textContent = 'Submitting...';
+
     try {
       await fetch(actionUrl, {
         method: 'POST',
@@ -1881,9 +1888,18 @@
         body: new URLSearchParams(payload).toString()
       });
       setError(EL.apiError, '');
-      setOk(EL.rsvpNote, 'RSVP submitted to sheet. If network is flaky, use RSVP Now as backup.');
+      setOk(EL.rsvpNote, 'RSVP submitted. You are on the guest board.');
     } catch (err) {
-      setError(EL.apiError, 'Could not submit directly. Use RSVP Now and submit in the opened form.');
+      const backupUrl = buildRsvpUrl();
+      if (backupUrl !== '#') {
+        window.open(backupUrl, '_blank', 'noopener');
+        setError(EL.apiError, 'Direct submit was blocked. Opened backup form in a new tab.');
+      } else {
+        setError(EL.apiError, 'Could not submit RSVP. Please try again in a minute.');
+      }
+    } finally {
+      EL.rsvpBtn.disabled = false;
+      EL.rsvpBtn.textContent = oldLabel;
     }
   }
 
@@ -1909,16 +1925,14 @@
     const character = buildMappedCharacter(shuffleOffset);
     lastCharacter = character;
     renderCharacter(character);
+    const actionUrl = getRsvpActionUrl();
+    const isConfigured = actionUrl && !actionUrl.includes('REPLACE_FORM_ID');
+    EL.rsvpBtn.disabled = !isConfigured;
 
-    const rsvpUrl = buildRsvpUrl();
-    EL.rsvpBtn.href = rsvpUrl;
-    EL.rsvpBtn.style.pointerEvents = rsvpUrl === '#' ? 'none' : 'auto';
-    EL.rsvpBtn.style.opacity = rsvpUrl === '#' ? '0.55' : '1';
-
-    if (rsvpUrl === '#') {
+    if (!isConfigured) {
       setError(EL.apiError, 'Set your RSVP form details in site-config.js to enable submission.');
     } else {
-      setOk(EL.rsvpNote, 'Character mapped. RSVP link is prefilled. Direct sheet submit is also available.');
+      setOk(EL.rsvpNote, 'Character mapped. Tap RSVP to submit to the sheet.');
     }
 
     clearInterval(timer);
@@ -1931,12 +1945,12 @@
     await loadCharacter();
   });
 
-  EL.rsvpSubmitBtn.addEventListener('click', submitRsvpToSheet);
+  EL.rsvpBtn.addEventListener('click', submitRsvpToSheet);
   EL.rsvpStatus.addEventListener('change', () => {
-    if (lastCharacter) EL.rsvpBtn.href = buildRsvpUrl();
+    if (lastCharacter) setOk(EL.rsvpNote, 'RSVP details updated. Tap RSVP to submit.');
   });
   EL.rsvpEta.addEventListener('input', () => {
-    if (lastCharacter) EL.rsvpBtn.href = buildRsvpUrl();
+    if (lastCharacter) setOk(EL.rsvpNote, 'RSVP details updated. Tap RSVP to submit.');
   });
 
   EL.replayBtn.addEventListener('click', () => {
