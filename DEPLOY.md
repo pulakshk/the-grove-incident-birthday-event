@@ -1,110 +1,82 @@
-# Deploy Guide (GitHub Pages + Gemini Proxy + Google Sheet RSVP)
+# Deploy Guide (No Serverless, Static Mapping)
 
-## 1) What is being hosted where
-- `GitHub Pages`: serves the invite UI (`minisite.html`, `site-config.js`, styles, JS).
-- `Cloudflare Worker`: serverless proxy that calls Gemini using your API key safely.
-- `Google Form + Google Sheet`: RSVP collection.
+## 1) Architecture now
+- `GitHub Pages`: hosts the invite site (`index.html`, `minisite.html`, `site-config.js`).
+- `Google Form + Google Sheet`: stores RSVP submissions.
+- Character generation is static and deterministic from the guest roster in `minisite.html`.
 
-You cannot safely call Gemini directly from GitHub Pages because the API key would be exposed.
+No API keys and no backend needed.
 
-## 2) Prepare the repo
+## 2) Push to GitHub
 From `/Users/pocketfm/Documents/birthday`:
 
 ```bash
-git init
 git add .
-git commit -m "Birthday invite v2: game unlock + AI dossier + RSVP"
-git branch -M main
-git remote add origin <your-github-repo-url>
+git commit -m "Switch to static roster mapping + improved game + sheet RSVP"
+git remote add origin <your-github-repo-url>   # skip if already added
+git push -u origin main
+```
+
+If `origin` already exists:
+
+```bash
+git remote set-url origin <your-github-repo-url>
 git push -u origin main
 ```
 
 ## 3) Enable GitHub Pages
-1. Open repo on GitHub.
+1. Open your repo on GitHub.
 2. Go to `Settings -> Pages`.
 3. Source: `Deploy from a branch`.
-4. Branch: `main`, Folder: `/ (root)`.
+4. Branch: `main`, folder: `/ (root)`.
 5. Save.
 
-Your site URL will be like:
-`https://<username>.github.io/<repo>/minisite.html`
+Site URL format:
+`https://<username>.github.io/<repo>/`
 
-## 4) Deploy the Gemini serverless proxy (Cloudflare Worker)
-
-Prerequisites:
-- Cloudflare account
-- Node installed locally
-
-Commands:
-
-```bash
-npm install -g wrangler
-wrangler login
-```
-
-From repo root (`/Users/pocketfm/Documents/birthday`):
-
-```bash
-wrangler secret put GEMINI_API_KEY
-# paste your Gemini key when prompted
-
-wrangler deploy
-```
-
-After deploy, copy your Worker URL, e.g.
-`https://grove-character-proxy.<subdomain>.workers.dev`
-
-The API endpoint used by the site is:
-`https://grove-character-proxy.<subdomain>.workers.dev/api/character`
-
-## 5) Configure `site-config.js`
-Edit `/Users/pocketfm/Documents/birthday/site-config.js`:
-- `apiUrl` -> your Worker `/api/character` URL.
-- `rsvpFormUrl` -> your Google Form `viewform` URL.
-- `rsvpFields` -> entry IDs from your prefilled form URL.
-
-Commit and push after editing:
-
-```bash
-git add site-config.js
-git commit -m "Configure production API + RSVP form"
-git push
-```
-
-## 6) Create RSVP form that auto-collates into a Sheet
-1. Create a Google Form with fields:
+## 4) Create RSVP form and sheet
+1. Create a Google Form with these fields:
 - Name
 - Role
 - Alias
-- Attending
+- RSVP status
+- ETA
+- Corporate superpower
+- Live mission task
 
-2. In Form, open `Responses` tab -> click `Link to Sheets`.
-3. This creates a connected Sheet where all submissions auto-append.
+2. In the form, open `Responses` and click `Link to Sheets`.
+3. This linked Google Sheet is where responses are stored.
 
-## 7) Get Form entry IDs (for prefill)
-1. In Google Form, click 3-dot menu -> `Get pre-filled link`.
-2. Fill sample values and click `Get link`.
-3. The generated URL has params like `entry.123456789=value`.
-4. Map those IDs into `site-config.js`:
+## 5) Configure `site-config.js`
+Edit `/Users/pocketfm/Documents/birthday/site-config.js`:
+- `rsvpFormUrl`: your form `.../viewform` URL
+- `rsvpFormActionUrl`: your form `.../formResponse` URL
+- `rsvpFields`: correct `entry.xxxxx` IDs for each form field
+
+## 6) How to get `entry.xxxxx` IDs
+1. In Google Form, click menu -> `Get pre-filled link`.
+2. Fill sample values and generate link.
+3. URL params look like `entry.123456789=value`.
+4. Copy these IDs into `site-config.js`.
+
+Example:
 
 ```js
 rsvpFields: {
   name: "entry.123456789",
   role: "entry.987654321",
   alias: "entry.111222333",
-  attendance: "entry.444555666"
+  attendance: "entry.444555666",
+  eta: "entry.777888999",
+  superpower: "entry.222333444",
+  task: "entry.555666777"
 }
 ```
 
-Now the RSVP button opens form with values already filled.
-
-## 8) Quick validation checklist
-1. Open `minisite.html` on your GitHub Pages URL.
-2. Fill profile and finish the runner game.
-3. Verify AI character appears.
-4. Click RSVP and check fields are prefilled.
-5. Submit form and verify row appears in linked Google Sheet.
-
-## 9) Optional hardening
-- In Worker, restrict CORS `Access-Control-Allow-Origin` to your exact GitHub Pages origin.
-- Add rate limiting to Worker if link is shared widely.
+## 7) Verify end-to-end
+1. Open your GitHub Pages URL.
+2. Complete profile and game.
+3. Character dossier should appear without any API call.
+4. Click `Submit RSVP to Sheet`.
+5. Confirm row appears in your linked Google Sheet.
+6. Keep `RSVP Now` as backup in case direct submission is blocked on some browsers.

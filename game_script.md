@@ -162,10 +162,14 @@ Each team submits:
 ## 9:00 PM - REVEAL
 
 Canonical reveal for this version:
-- **V's death**: stress-triggered collapse during outage, then deliberate evidence suppression by multiple people.
-- **Primary concealment lead**: Pooja (narrative control).
-- **Financial concealment lead**: Aniket + Siddak conflict around treasury exposure.
-- **Tonight's midgame kill trigger**: staged by the person most threatened by the leak trail (choose based on strongest evidence shown by players; host picks from top 2 vote-getters).
+- **V was murdered by a coordinated chain, not a lone killer.**
+- **The chain**:
+  1. **Kovid** triggers a shadow deploy to expose V publicly.
+  2. **Siddak + Aniket** force a treasury confrontation in the same window.
+  3. **Pooja** controls the narrative, delays the emergency response call, and edits evidence trails.
+  4. **One supporting witness** (chosen by host from top-voted suspects) silently confirms the cover-up by withholding a critical clue.
+- **Legal framing (in-game)**: conspiracy + omission + evidence tampering.
+- **Tonight's midgame kill trigger**: staged by the person most threatened by the leak archive (host selects from top 2 vote-getters).
 
 This keeps the ending interactive while preserving a coherent backbone.
 
