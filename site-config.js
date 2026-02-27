@@ -1,19 +1,19 @@
 window.APP_CONFIG = {
   // Google Form URL (viewform link)
-  rsvpFormUrl: "https://docs.google.com/forms/d/e/REPLACE_FORM_ID/viewform",
+  rsvpFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdFqGt7DrWbOIKP-v0Lm0FqBHrTcRl5wPMJrnIPIFVwRFpRbg/viewform",
 
   // Google Form action URL (formResponse link)
-  rsvpFormActionUrl: "https://docs.google.com/forms/d/e/REPLACE_FORM_ID/formResponse",
+  rsvpFormActionUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdFqGt7DrWbOIKP-v0Lm0FqBHrTcRl5wPMJrnIPIFVwRFpRbg/formResponse",
 
   // Google Form entry IDs from prefilled link
   rsvpFields: {
-    name: "entry.111111111",
-    role: "entry.222222222",
-    alias: "entry.333333333",
-    attendance: "entry.444444444",
-    eta: "entry.555555555",
-    superpower: "entry.666666666",
-    task: "entry.777777777"
+    name: "entry.877086558",
+    role: "entry.1498135098",
+    alias: "entry.1424661284",
+    attendance: "entry.2606285",
+    eta: "", // User did not include this field in the form
+    superpower: "entry.1045542946",
+    task: "entry.571335169"
   },
 
   attendanceYesValue: "Yes"
