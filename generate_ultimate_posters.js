@@ -91,6 +91,56 @@ const PERSONAL_MEMORIES = {
   'Naisargi Kothari': 'PERSONAL MEMORY: You were the one who authorized the power-cycling of the server cooling system at 21:03 PM, which caused the oxygen levels in Room 4 to plummet.'
 };
 
+const ORIGINAL_CODES = {
+  "Anubhav Gaba": "13025",
+  "Adarsh": "17013",
+  "Pranjal Srivastava": "18038",
+  "Shubh Khandelwal": "20086",
+  "Gunjan Samtani": "21699",
+  "Mehul Mohan": "23748",
+  "Siddak Bakshi": "24842",
+  "Kovid Poudel": "26744",
+  "Ayush Borse": "28895",
+  "Ritvik Hedge": "31678",
+  "Vrishali": "32306",
+  "Harsh Bhimrajka": "32705",
+  "Aiswarya Mahajan": "32859",
+  "Sagar Badiyani": "33633",
+  "Sajag Jain": "33717",
+  "Varun Chopra": "34091",
+  "Aniket Chandra": "35235",
+  "Devashish Rane": "38037",
+  "Iti Kathed": "38503",
+  "Srishti Malviya": "40633",
+  "Abhishek Gosavi": "47092",
+  "Swapnil": "47931",
+  "Vaibhav Gupta": "48090",
+  "Aanak Sengupta": "48335",
+  "Shrenik Golecha": "49857",
+  "Mammoth": "53320",
+  "Shubham Jain": "53767",
+  "The Midnight Intern": "55131",
+  "Padmanabhan Murli": "55554",
+  "Vishnupriya": "58497",
+  "Neil Daftary": "67535",
+  "Mohnish Mhatre": "69300",
+  "Shaunak": "72497",
+  "Prachi Verma": "72589",
+  "Manasi Chansoria": "74911",
+  "Kartik Khandelwal": "74965",
+  "Rahul": "75322",
+  "Naisargi Kothari": "79863",
+  "Bharat Dhir": "80022",
+  "The IT Support": "85908",
+  "Akshat": "89225",
+  "Abhishek Mukharjee": "89777",
+  "Shikhar Sharma": "90111",
+  "Ayush Mittal": "92970",
+  "Surabhi Solanki": "94326",
+  "Akshat": "89225",
+  "Pooja Ghatia": "98180"
+};
+
 const DEFAULT_MEMORIES_BY_TEAM = {
   'Startup Investors': 'PERSONAL MEMORY: Your greed at 18:00 PM led you to threaten the founder. You told them that if the valuation didn\'t hit the target tonight, you\'d see them in court.',
   'Product Council': 'PERSONAL MEMORY: You saw the unpatched bug list at 18:30 PM. You decided it wasn\'t a "blocker" and actively concealed the risk level from the technical floor.',
@@ -249,8 +299,9 @@ async function generateHTMLPosters() {
   for (const guest of guests) {
     const page = await browser.newPage();
 
-    // Generate a random 5-digit code
-    const accessCode = Math.floor(10000 + Math.random() * 90000).toString();
+    // Use ORIGINAL_CODES mapping if available, otherwise generate a deterministic 5-digit code
+    let accessCode = ORIGINAL_CODES[guest.name] || (parseInt(crypto.createHash('sha256').update(guest.name).digest('hex').substring(0, 8), 16) % 90000 + 10000).toString();
+
     const hashedCode = crypto.createHash('sha256').update(accessCode).digest('hex');
 
     // Save to DB
@@ -260,6 +311,9 @@ async function generateHTMLPosters() {
       clueText: Buffer.from(guest.clue).toString('base64'),
       memoryText: Buffer.from(guest.memory || 'Memory Wiped').toString('base64')
     };
+
+    // Log the code for the master list
+    console.log(`CODE_MASTER: ${guest.name} | ${accessCode}`);
 
     // Check which team possesses the artifact they need to ask.
     // Default sending instruction based on Team dynamics.
