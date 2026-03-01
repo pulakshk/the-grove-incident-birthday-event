@@ -1,0 +1,66 @@
+# THE GROVE INCIDENT: FINAL REVEAL SCRIPT (NOTEBOOKLM)
+## Instructions to the Host: 
+Do not send this out before the party. Generate this video and play it for the entire room at exactly 9:00 PM, immediately after the final votes are cast.
+
+---
+
+**[SCENE START]**
+
+**[VISUAL: The Grove Labs logo glitching out. Security camera footage rewinding rapidly to the 19:00 hour.]**
+**[AUDIO: Ticking clock, tense cinematic drone]**
+
+**NARRATOR (Cold, Analytical):**
+The investigation is concluded. 
+The encrypted logs have been decrypted. The true timeline of what happened at The Grove on March 1st can now be established as absolute fact.
+
+This was not a murder by a single lone wolf. This was a cascading failure of human greed, ego, and cowardice across all five factions. 
+
+Here is the undeniable truth.
+
+**[VISUAL: Timestamp flashes on screen: 18:45 PM]**
+
+**NARRATOR:**
+At 18:45 PM, the Operations & Ground Truth team noted structural instability in the physical server room holding the new 'Version 3' architecture. At the same time, the Engineering Blackbox detected a massive, unpatchable memory leak in the core algorithm. 
+
+The launch was destined to fail catastrophically. The Product Council was informed immediately. 
+
+**[VISUAL: Timestamp flashes on screen: 18:55 PM]**
+
+**NARRATOR:**
+Instead of halting the launch, the Product Council and the Startup Investors panicked. The Investors realized that a delayed launch would destroy the company's valuation before they could liquidate their shares. 
+
+Together with Product, they ordered Engineering to execute a "Shadow Deploy." They forced the engineers to push an older, stable—but entirely fake—version of the code, disguised as 'Version 3'. 
+
+**[VISUAL: Timestamp flashes on screen: 19:03 PM]**
+
+**NARRATOR:**
+At 19:03 PM, the Shadow Deploy went live. The metrics spiked. The launch looked like a massive success. 
+
+Behind the scenes, the Culture and Media Lab immediately went to work spinning a fabricated narrative, selling the fake success to the press while ignoring the warnings coming from the floor marshals.
+
+**[VISUAL: Timestamp flashes on screen: 20:15 PM]**
+
+**NARRATOR:**
+But 'V', the founder, realized what had happened. He discovered the Shadow Deploy. He realized his legacy was built on fraudulent data demanded by his own investors. 
+
+At 20:15 PM, V locked himself in Server Room 4. He began manually deleting the fake database to expose the fraud. 
+
+**[VISUAL: Timestamp flashes on screen: 21:00 PM - The Silent Hour]**
+
+**NARRATOR:**
+The Startup Investors and the Product Council realized V was destroying the company. But it was the Operations Team who deactivated his keycard, trapping him inside Server Room 4 to prevent him from reaching the press. 
+
+And it was the Engineering Team who remotely triggered a total server purge to hide their own tracks—an action that overloaded the cooling systems in Room 4 and suffocated the founder. 
+
+**[VISUAL: The screen cuts to black]**
+
+**NARRATOR:**
+Who killed V? 
+
+The Engineers pulled the trigger. Operations locked the door. Product wrote the lie. Culture sold the lie. And the Investors paid for it all. 
+
+You are all guilty. 
+
+Case Closed. 
+
+**[SCENE END]**
