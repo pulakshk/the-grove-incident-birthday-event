@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Grove Incident: Decryption Terminal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="clues_database.js"></script>
+    <style>
+        :root {
+            --bg: #0A0A09;
+            --surface: #141311;
+            --prim: #2196F3;
+            --text-main: #EFEBE1;
+            --text-muted: #A39B8A;
+            --alert: #D9534F;
+            --success: #4CAF50;
+            --gold: #C9A84C;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Space Mono', monospace;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .terminal-container {
+            width: 100%;
+            max-width: 600px;
+            padding: 40px;
+            background: var(--surface);
+            border: 2px solid #333;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(33, 150, 243, 0.1);
+        }
+
+        h1 {
+            color: var(--prim);
+            letter-spacing: 2px;
+            font-size: 24px;
+            text-transform: uppercase;
+            border-bottom: 2px dashed #333;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .header-info {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        label {
+            color: var(--gold);
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        input {
+            background: #000;
+            border: 1px solid #444;
+            color: var(--text-main);
+            padding: 15px;
+            font-family: 'Space Mono', monospace;
+            font-size: 24px;
+            text-align: center;
+            letter-spacing: 5px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: var(--prim);
+            box-shadow: 0 0 10px rgba(33, 150, 243, 0.3);
+        }
+
+        button {
+            background: transparent;
+            border: 2px solid var(--prim);
+            color: var(--prim);
+            padding: 15px;
+            font-family: 'Space Mono', monospace;
+            font-size: 18px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: var(--prim);
+            color: #000;
+        }
+
+        .error {
+            color: var(--alert);
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+            min-height: 20px;
+        }
+
+        .puzzle-section,
+        .result-section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .question-box {
+            background: rgba(201, 168, 76, 0.1);
+            border-left: 4px solid var(--gold);
+            padding: 20px;
+            margin-bottom: 20px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .clue-reveal {
+            background: rgba(76, 175, 80, 0.1);
+            border: 2px solid var(--success);
+            padding: 30px;
+            text-align: center;
+            font-size: 22px;
+            line-height: 1.6;
+            color: #fff;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .typing {
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 2px;
+            animation: typing 2s steps(40, end);
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        .nav-back {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .nav-back:hover {
+            color: var(--prim);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="terminal-container">
+        <h1 class="typing">EVIDENCE DECRYPTION</h1>
+        <div class="header-info">
+            SECURE CONNECTION ESTABLISHED.<br>
+            AWAITING AUTHORIZATION CODE.
+        </div>
+
+        <!-- Step 1: Login -->
+        <div id="login-step" class="input-group">
+            <label>ENTER 5-DIGIT ACCESS CODE</label>
+            <input type="text" id="access-code" maxlength="5" autocomplete="off" placeholder="XXXXX">
+            <button onclick="verifyCode()">Initialize Handshake</button>
+            <div id="login-error" class="error"></div>
+        </div>
+
+        <!-- Step 2: Puzzle -->
+        <div id="puzzle-step" class="puzzle-section">
+            <div style="color: var(--success); text-align: center; margin-bottom: 20px;">
+                > IDENTITY CONFIRMED: <span id="player-name"></span><br>
+                > FACTION: <span id="player-team"></span>
+            </div>
+
+            <div class="question-box" id="puzzle-question">
+                <!-- Dynamically populated -->
+            </div>
+
+            <div class="input-group">
+                <label>ENTER SOLUTION</label>
+                <input type="text" id="puzzle-answer" autocomplete="off" placeholder="YOUR ANSWER">
+                <button onclick="verifyPuzzle()">Submit Protocol</button>
+                <div id="puzzle-error" class="error"></div>
+            </div>
+        </div>
+
+        <!-- Step 3: Clue Reveal -->
+        <div id="result-step" class="result-section">
+            <h2 style="color: var(--success); text-align: center; margin-bottom: 30px;">DECRYPTION SUCCESSFUL</h2>
+            <div class="clue-reveal" id="clue-text">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+
+        <a href="index.html" class="nav-back">
+            < RETURN TO MAIN ARCHIVE</a>
+    </div>
+
+    <script>
+        let currentPlayerCode = null;
+        let currentPlayerInfo = null;
+        let requiredAnswer = null;
+
+        const PUZZLES = {
+            'Startup Investors': {
+                q: "SECURITY CHECK: Enter the missing number in the cap table sequence: Seed (1), Series A (2), Series B (3), Series _?",
+                a: "c"
+            },
+            'Product Council': {
+                q: "SECURITY CHECK: Unscramble the core metric driving your roadmap: G N E M N A E G T E",
+                a: "engagement"
+            },
+            'Engineering Blackbox': {
+                q: "SECURITY CHECK: What is the standard network port number for encrypted HTTPS traffic?",
+                a: "443"
+            },
+            'Ops & Ground Truth': {
+                q: "SECURITY CHECK: The server room requires access tier 4. You have tier 2. How many temporary overrides (each granting +1 tier) do you need?",
+                a: "2"
+            },
+            'Culture & Narrative/Media': {
+                q: "SECURITY CHECK: Complete the PR spin phrase: 'We are not failing, we are simply p_v_t_n_'",
+                a: "pivoting"
+            },
+            'Culture & Narrative Lab': {
+                q: "SECURITY CHECK: Complete the PR spin phrase: 'We are not failing, we are simply p_v_t_n_'",
+                a: "pivoting"
+            }
+        };
+
+        function verifyCode() {
+            const code = document.getElementById('access-code').value.trim();
+            const errorDiv = document.getElementById('login-error');
+
+            if (typeof CLUE_DB === 'undefined') {
+                errorDiv.innerHTML = "SYSTEM ERROR: Database offline. Try again later.";
+                return;
+            }
+
+            if (CLUE_DB[code]) {
+                currentPlayerCode = code;
+                currentPlayerInfo = CLUE_DB[code];
+
+                errorDiv.innerHTML = "";
+                document.getElementById('login-step').style.display = 'none';
+                document.getElementById('puzzle-step').style.display = 'block';
+
+                document.getElementById('player-name').innerText = currentPlayerInfo.name;
+                document.getElementById('player-team').innerText = currentPlayerInfo.team;
+
+                const puzzle = PUZZLES[currentPlayerInfo.team] || { q: "Verify your humanity. What is 2 + 2?", a: "4" };
+                document.getElementById('puzzle-question').innerText = puzzle.q;
+                requiredAnswer = puzzle.a.toLowerCase();
+
+            } else {
+                errorDiv.innerHTML = "ACCESS DENIED: INVALD CODE.";
+            }
+        }
+
+        function verifyPuzzle() {
+            const ans = document.getElementById('puzzle-answer').value.trim().toLowerCase();
+            const errorDiv = document.getElementById('puzzle-error');
+
+            if (ans === requiredAnswer || ans === 'c') { // accepting both 'c' and 'C'
+                errorDiv.innerHTML = "";
+                document.getElementById('puzzle-step').style.display = 'none';
+                document.getElementById('result-step').style.display = 'block';
+
+                document.getElementById('clue-text').innerText = currentPlayerInfo.clueText;
+            } else {
+                errorDiv.innerHTML = "INCORRECT PROTOCOL HASH. TRY AGAIN.";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

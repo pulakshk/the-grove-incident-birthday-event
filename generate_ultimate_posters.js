@@ -178,8 +178,20 @@ async function generateHTMLPosters() {
 
   const browser = await puppeteer.launch({ headless: true });
 
+  const clueDatabase = {};
+
   for (const guest of guests) {
     const page = await browser.newPage();
+
+    // Generate a random 5-digit code
+    const accessCode = Math.floor(10000 + Math.random() * 90000).toString();
+
+    // Save to DB
+    clueDatabase[accessCode] = {
+      name: guest.name,
+      team: guest.team,
+      clueText: guest.clue
+    };
 
     // Check which team possesses the artifact they need to ask.
     // Default sending instruction based on Team dynamics.
@@ -213,7 +225,7 @@ async function generateHTMLPosters() {
         
         .label { color: #A39B8A; font-size: 20px; text-transform: uppercase; font-family: 'Space Mono', monospace; margin-bottom: 10px; }
         .value { font-size: 42px; font-weight: 800; }
-        .value.highlight { color: \${TEAM_COLORS[guest.team] || '#C9A84C'}; }
+        .value.highlight { color: ${TEAM_COLORS[guest.team] || '#C9A84C'}; }
         
         .bio-text { font-size: 28px; line-height: 1.5; color: #D4C4A0; border-left: 4px solid #333; padding-left: 20px; margin-top: 30px;}
 
@@ -297,12 +309,14 @@ async function generateHTMLPosters() {
           <div class="mission-text">${guest.mission}</div>
         </div>
 
-        <div class="section-title">03 // The Evidence You Hold</div>
+        <div class="section-title">03 // Encrypted Evidence Locker</div>
         <div class="clue-box">
-          <div class="label" style="color:#2196F3;">Your Artifact / Clue:</div>
-          <div class="clue-text" style="margin-bottom: 20px;">${guest.clue}</div>
-          <div class="label" style="color:#2196F3;">INSTRUCTION ON WHO TO SHOW THIS TO:</div>
-          <div class="clue-text" style="font-size: 26px;">${instruction}</div>
+          <div class="label" style="color:#2196F3;">Your Artifact Access Code:</div>
+          <div class="clue-text" style="font-size: 60px; text-align: center; letter-spacing: 15px; margin: 30px 0; font-weight: bold;">${accessCode}</div>
+          <div class="label" style="color:#2196F3;">DECRYPTION INSTRUCTIONS:</div>
+          <div class="clue-text" style="font-size: 26px;">1. Go to the event website.<br>2. Open the DECRYPTION TERMINAL.<br>3. Enter your code and solve your Faction's puzzle to view your physical clue.</div>
+          <div class="label" style="color:#E91E63; margin-top: 20px;">ONCE DECRYPTED, WHO TO SHOW IT TO:</div>
+          <div class="clue-text" style="font-size: 22px; color: #E91E63;">${instruction}</div>
         </div>
 
         <div class="section-title">04 // Faction Background</div>
@@ -334,7 +348,12 @@ async function generateHTMLPosters() {
   }
 
   await browser.close();
+
+  // Write the database file
+  fs.writeFileSync(path.join(__dirname, 'clues_database.js'), 'const CLUE_DB = ' + JSON.stringify(clueDatabase, null, 2) + ';');
+
   console.log('All ULTIMATE infographics generated successfully in /ultimate_posters!');
+  console.log('Created clues_database.js with all access codes.');
 }
 
 generateHTMLPosters().catch(console.error);
