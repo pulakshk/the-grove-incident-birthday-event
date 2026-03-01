@@ -1,0 +1,12 @@
+JIRA SEC-1198 (DECRYPTED)
+Priority: P0 (CRITICAL - SYSTEM FAILURE IMMINENT)
+Issue: Auth token replay vulnerability in Version 3.0-RC1
+Reporter: Harsh Bhimrajka (18:50 PM)
+Status at launch: DEFERRED BY PRODUCT COUNCIL
+
+DETAILS:
+A race condition exists in the Session Manager. If the system is power-cycled during a shadow-deploy, all root-level access codes are cached in plain text and can be replayed to unlock physical security zones. 
+
+REPORTER COMMENT (Harsh): "Found the leak. It's bad. If we deploy now, the server room locks might fail in a failover state. But it's 7 PM and I'm headed out. We can patch Monday."
+
+LEADERSHIP COMMENT (Siddak/Neil): "Risk accepted. Neil told me to ignore it. Ship now. We have a valuation to protect. Patch after the launch party."

@@ -1,5 +1,14 @@
-[19:03:12] user=kovid.p action=deploy_start branch=launch-shadow
-[19:03:18] user=anubhav.g action=guardrail_override value=true
-[19:07:40] user=sagar.b action=debug_tunnel_detected source=unknown
-[20:58:09] user=v.vora action=manual_patch module=auth_gate
-[20:58:46] system=core action=crash code=OOM-RACE
+[18:30:00] user=v.vora status=warning message="Server Room 4 cooling at 95%. Manual override imminent."
+[18:45:00] user=siddak.b status=order message="Ignore cooling alerts. Focus on Green Dashboard."
+[18:50:00] user=harsh.b status=log message="P0 Memory Leak detected. Session Manager overflow risk."
+[19:01:00] user=ayush.m action=root_access_grant recipient=anubhav.g, devashish.r, kovid.p
+[19:03:12] user=anubhav.g action=deploy_start branch=launch-shadow-V3 status=executed
+[19:03:18] user=devashish.r action=guardrail_override value=true status=confirmed
+[19:03:20] user=kovid.p action=checksum_bypass status=verified
+[19:07:40] user=sagar.b action=debug_tunnel_detected source=external_press_feed
+[20:15:00] system=security action=door_lock zone=SR-4 user=iti.k witness=shaunak reason="Manual Override"
+[20:58:09] user=v.vora action=manual_patch_attempt module=auth_gate [FAILED: ACCESS REVOKED]
+[21:00:00] user=shikhar.s action=keycard_revoke target=v.vora authorize=ayush.m status=success
+[21:03:46] user=naisargi.k action=power_cycle_global target=all_zones authorize=pooja.g
+[21:03:50] system=life_support action=cutoff zone=SR-4 reason=power_cycle_logic
+[21:14:00] user=bharat.d action=emergency_access zone=SR-4 status=body_found witness=pooja.g

@@ -48,47 +48,86 @@ const CHARACTER_QUIRKS = [
 ];
 
 const EVIDENCE_CONTEXT = {
-  'prod-deploy-log-7:03.txt': 'CONTEXT: This raw server log proves that the "Version 3" launch was actually a fake shadow deployment rolled back to an older version at exactly 19:03 PM.',
-  'side-letter-v2-signed.pdf': 'CONTEXT: This secret legal agreement shows the Startup Investors demanded fraudulent performance metrics to inflate the company valuation.',
-  'auth-vuln-P0-jira.pdf': 'CONTEXT: This high-severity bug report proves Engineering knew the system was critically broken and vulnerable before launch.',
-  'cease-desist-draft.pdf': 'CONTEXT: This unreleased legal document shows Product Council was preparing to silence anyone who spoke up about the fake launch.',
-  'inboard-notes-v-edit.pdf': 'CONTEXT: These heavily redacted meeting notes show a coordinated cover-up attempt to hide the 19:03 shadow deploy.',
-  'treasury-map-Nov.xlsx': 'CONTEXT: This internal financial spreadsheet reveals massive, unrecorded money transfers happening right as the warnings were ignored.',
-  'voice-clone-founder.m4a': 'CONTEXT: This horrifying audio clip reveals a generated deepfake of the founder, proving Culture & Media were altering reality.',
-  'grove-commentary-gen-v4.txt': 'CONTEXT: This document shows the Culture team was pre-writing PR spin for a disaster they knew was coming.',
-  'ab-test-raw-export.csv': 'CONTEXT: This raw data export proves the metrics fed to the press were completely fabricated.'
+  'prod-deploy-log-7:03.txt': 'CONTEXT: This log proves the 19:03 shadow deploy was a deliberate override by Anubhav, Dev, and Kovid, excluding the founder from the process.',
+  'auth-vuln-P0-jira.pdf': 'CONTEXT: This report shows Engineering knew the system was broken before launch. Harsh ignored the leak at 18:50 under pressure from Neil.',
+  'cease-desist-draft.pdf': 'CONTEXT: This legal threat proves the Investors and Product Council were actively suppressing V while he was trapped in Room 4.',
+  'inboard-notes-v-edit.pdf': 'CONTEXT: These redacted notes reveal the coordinated timeline: locked in SR-4 by Iti/Prachi, card revoked by Shikhar/Mittal, oxygen cut by Naisargi/Bharat/Pooja.',
+  'side-letter-v2-signed.pdf': 'CONTEXT: This document shows the predatory financial pressure that forced the 19:03 launch at all costs.',
+  'ab-test-raw-export.csv': 'CONTEXT: These metrics prove the "Record Breaking" engagement was actually a rigged simulation fed to the dashboard by Shubham.',
+  'treasury-map-Nov.xlsx': 'CONTEXT: This spreadsheet reveals the massive payout everyone received for staying silent about the "Technical Malfunction".',
+  'grove-commentary-gen-v4.txt': 'CONTEXT: This file proves the Culture team was using AI to generate fake positive sentiment while V was still trapped.',
+  'voice-clone-founder.m4a': 'CONTEXT: This audio file is a deepfake of V created after his death by the Culture team to reassure the board.'
 };
 
 const PERSONAL_MEMORIES = {
-  'Bharat Dhir': 'PERSONAL MEMORY: You were the one who found V\'s body inside Server Room 4 at 21:14 PM. The cooling system was completely overloaded. You haven\'t told anyone what you saw.',
-  'Sajag Jain': 'PERSONAL MEMORY: At 21:00 PM, you received an urgent, off-the-books request from the executive floor to completely deactivate V\'s executive keycard. You clicked confirm.',
-  'Anubhav Gaba': 'PERSONAL MEMORY: You are the engineer who pushed the execute button on the 19:03 Shadow Deploy. You knew the Version 3 code was fake.',
-  'Kovid Poudel': 'PERSONAL MEMORY: At 21:05 PM, you triggered the remote server purge to wipe the logs of the Shadow Deploy. You didn\'t check if Server Room 4 was occupied.',
-  'Siddak Bakshi': 'PERSONAL MEMORY: At 18:55 PM, you personally demanded Product to launch anyway, threatening to tank the company valuation if the metrics delayed.',
-  'Aanak Sengupta': 'PERSONAL MEMORY: You received the critical instability warnings from Ops at 18:45 PM. You deliberately chose not to halt the launch.',
-  'Pranjal Srivastava': 'PERSONAL MEMORY: At 19:15 PM, you were told the metrics were entirely fake. You wrote the press release celebrating the "record-breaking launch" anyway.',
-  'Devashish Rane': 'PERSONAL MEMORY: You drafted a cease-and-desist letter at 20:30 PM aimed at silencing the engineers who were complaining about the shadow deploy.',
-  'Manasi Chansoria': 'PERSONAL MEMORY: You warned the executives at 18:45 PM that Server Room 4 was overheating. They told you to stay quiet.',
-  'Mehul Mohan': 'PERSONAL MEMORY: You told the Product Council "I do not care if it\'s broken. Give me a green dashboard today." You forced the shadow deploy.',
-  'Shubham Jain': 'PERSONAL MEMORY: You built the fake performance model that fed rigged data to the investors.',
-  'Abhishek Gosavi': 'PERSONAL MEMORY: You actively buried the Jira tickets from the engineering floor so the press wouldn\'t find out about the leaks.',
-  'Prachi Verma': 'PERSONAL MEMORY: You were manning the security desk. You watched V walk into Server Room 4 on the cameras at 20:15 PM and said nothing.',
-  'Neil Daftary': 'PERSONAL MEMORY: You signed off on the side-letter at 17:55 PM, knowing it was a predatory terms sheet that would force V to launch at any cost.',
-  'Sagar Badiyani': 'PERSONAL MEMORY: You were the one who leaked the "record-breaking metrics" to the press at 19:10 PM, before you even verified if the code was real.',
-  'Akshat': 'PERSONAL MEMORY: You told the Product Council that if they didn\'t hit the 19:00 launch window, you would trigger a board-level coup to remove V.',
-  'Aniket Chandra': 'PERSONAL MEMORY: You saw the unrecorded treasury transfers at 18:30 PM. You realized someone was stealing from the company and you chose to ignore it for your own payout.',
-  'Pooja Ghatia': 'PERSONAL MEMORY: You personally edited the roadmap at 18:00 PM to remove all the "High Risk" tags from the Engineering tickets.',
-  'Gunjan Samtani': 'PERSONAL MEMORY: You were in the meeting where V tried to delay the launch. You were the first one to speak up and say "We can\'t stop now, we have a valuation to protect".',
-  'Kartik Khandelwal': 'PERSONAL MEMORY: You assigned the fake "Version 3" label to the old code deployment at 18:50 PM.',
-  'Ritvik Hedge': 'PERSONAL MEMORY: You saw the "Critical Flaw" emails at 18:35 PM and marked them as "Read" without replying.',
-  'Shubh Khandelwal': 'PERSONAL MEMORY: You drafted the internal memo that blamed "Technical Debt" for the server room instability, knowing it was actually a cooling failure.',
-  'Varun Chopra': 'PERSONAL MEMORY: You were the one who told the Culture team to start drafting the "Success" story at 18:00 PM, before the code was even finished.',
-  'Harsh Bhimrajka': 'PERSONAL MEMORY: You saw the memory leak at 18:50 PM and decided to ignore it because you wanted to go home for the night.',
-  'Ayush Mittal': 'PERSONAL MEMORY: You were the one who provided the root access password to the Product Council allowing them to override the deployment at 19:03 PM.',
-  'Shikhar Sharma': 'PERSONAL MEMORY: You were the one who set the "Shadow Deploy" script to auto-delete its own logs after execution.',
-  'Vaibhav Gupta': 'PERSONAL MEMORY: You saw the 19:03 override happening in real-time and you didn\'t raise the alarm.',
-  'Iti Kathed': 'PERSONAL MEMORY: You saw V walking into Server Room 4 at 20:15 PM and you locked the external security door behind him to prevent "interruptions".',
-  'Naisargi Kothari': 'PERSONAL MEMORY: You were the one who authorized the power-cycling of the server cooling system at 21:03 PM, which caused the oxygen levels in Room 4 to plummet.'
+  // CLUSTER 1: THE ARCHITECTS (Valuation Pressure)
+  'Siddak Bakshi': "PERSONAL MEMORY: At 18:55 PM, you physically slammed the door to the executive suite and told V, 'Launch it or lose your seat.' You knew the 19:03 Shadow Deploy was a fraud, but you needed the valuation to spike for the Series B. You ignored the rising heat-sensors on your phone dashboard.",
+  'Mehul Mohan': "PERSONAL MEMORY: You were the one who told the Product Council, 'I do not care if the code is burning. Give me a green dashboard today.' You watched the Shadow Deploy trigger at 19:03 PM and celebrated with champagne, knowing V was locked out of the system.",
+
+  // CLUSTER 2: THE EXECUTIONERS (Shadow Deploy)
+  'Anubhav Gaba': "PERSONAL MEMORY: At 19:03 PM, you reached across the console and hit 'EXECUTE' on the V3-Shadow branch alongside Devashish and Kovid. You felt the static in the air as the fake Version 3 code swapped. You saw V's panicked face through the server room glass at 20:15 PM and you turned your back.",
+  'Devashish Rane': "PERSONAL MEMORY: You co-signed the deployment keys at 19:03 PM with Anubhav and Kovid. You knew the Version 3 patch was a lie. Later, at 20:30 PM, you drafted the final Cease and Desist to prove V was 'insubordinate' while he was still trapped in the server room.",
+  'Kovid Poudel': "PERSONAL MEMORY: Your hands were shaking at 19:03 PM as you authorized the Shadow Deploy credentials for Anubhav and Devashish. Later, at 21:05 PM, you triggered the remote server purge to wipe the logs of the deploy. You intentionally ignored the 'Zone 4 Occupied' flag.",
+
+  // CLUSTER 3: THE NEGLIGENT (The Leak & Pressure)
+  'Harsh Bhimrajka': "PERSONAL MEMORY: You saw the P0 memory leak spike at 18:50 PM. You felt the room getting humid. Neil told you, 'Don't worry about it, catch your flight.' You saved your work and left at 19:00 PM. You chose your weekend over V's life.",
+  'Neil Daftary': "PERSONAL MEMORY: You signed the predatory side-letter at 17:55 PM. At 18:55, you saw Harsh worrying about a memory leak and told him to 'Pack it up and go home, we've got it covered.' You were the one who provided the legal 'kill-switch' use to trap V.",
+
+  // CLUSTER 4: THE SILENCERS (Locking the Door)
+  'Iti Kathed': "PERSONAL MEMORY: You were manning the security desk. You watched V walk into Server Room 4 at 20:15 PM with his manual repair kit. Shaunak was standing right next to you. You locked the heavy magnetic security door from the outside to 'prevent a scene' while investors were nearby.",
+  'Shaunak': "PERSONAL MEMORY: You watched Iti lock the SR-4 door at 20:15 PM. You heard the muffled shouting for ten minutes. You looked at the camera feed and saw V struggling with the internal vent. You turned the monitor off so the investors wouldn't see.",
+
+  // CLUSTER 5: THE REVOKERS (Keycard Lockdown)
+  'Shikhar Sharma': "PERSONAL MEMORY: At 21:00 PM, you and Ayush Mittal shared the root terminal. You clicked 'REVOKE ALL' on V's executive keycard while he was still inside Room 4. You also set the Shadow Deploy script to self-destruct right after the power cycle.",
+  'Ayush Mittal': "PERSONAL MEMORY: You gave the root credentials to Shikhar and Anubhav. At 21:00 PM, you watched Shikhar deactivate V's emergency exit privileges. You heard the magnetic lock click into 'Permanent Seal' mode and you did nothing to help him.",
+
+  // CLUSTER 6: THE ERASERS (Log Wipe & Oxygen Fail)
+  'Naisargi Kothari': "PERSONAL MEMORY: At 21:03 PM, you initiated the 'Full System Power Cycle' with Bharat and Pooja to wipe the deploy logs. You heard a metallic thud from the vents right as the power cut. You didn't realize the power-cycle also disabled the emergency oxygen scrubbers in SR-4.",
+  'Bharat Dhir': "PERSONAL MEMORY: You were there when Naisargi triggered the power-cycle at 21:03. You found V's body at 21:14 PM. The air in SR-4 tasted like ozone. His fingernails were broken from scratching at the door. You were told by Pooja to 'Clean it up' immediately.",
+  'Pooja Ghatia': "PERSONAL MEMORY: You authorized Naisargi to cycle the power at 21:03. When Bharat found the body, you were the one who ordered the floor-wipe and told everyone to 'Stick to the Technical Malfunction story' or lose their payouts.",
+
+  // CLUSTER 7: THE MASKER (Alarms)
+  'Shubham Jain': "PERSONAL MEMORY: At 19:05 PM, you manually disabled the building's haptic alarm floor-grid for Zone 4. You didn't want the investors to hear the cooling-failure sirens. You saw the 'OXYGEN WARNING' flicker on your screen and you clicked 'Dismiss All'.",
+
+  // NARRATIVE CONTROL & MEDIA MASKING
+  'Rahul': "PERSONAL MEMORY: At 19:15 PM, you were told the metrics were entirely fake. You wrote the press release celebrating the 'record-breaking launch' anyway. You saw the shadows moving toward SR-4 and you turned your back to write more copy.",
+  'Aiswarya Mahajan': "PERSONAL MEMORY: You were told at 19:30 PM that the launch was a total failure. You spent the next hour drafting fake testimonials to drown out the negative press. You saw the paramedics arrive at 21:30 PM and you kept typing.",
+  'Abhishek Mukharjee': "PERSONAL MEMORY: You spent the night running the 'Sentiment Engine'—an AI script that generated thousands of fake positive tweets to bury the news of the hardware failure in SR-4.",
+  'Pranjal Srivastava': "PERSONAL MEMORY: You were tasked with editing the live-stream footage of the launch to remove the frames where the server-rack cooling fans were visibly sparking at 19:10 PM.",
+
+  // THE AUDITORS & INVESTIGATORS (Searching for Truth)
+  'Aanak Sengupta': "PERSONAL MEMORY: You found the discrepancy in the 'Version 3' checksums at 19:20 PM. You tried to alert the Product Council, but your access was restricted by Shikhar. You knew a shadow-deploy had happened.",
+  'Ritvik Hedge': "PERSONAL MEMORY: You saw the emails from V at 18:35 PM titled 'THEY ARE KILLING THE CORE'. You marked them as spam per Siddak's order, but you kept a local copy on a USB drive. You know the truth is in the side-letter.",
+  'Shubh Khandelwal': "PERSONAL MEMORY: You were the one who noticed that V's calendar for March 1st had been wiped by an admin at 18:00 PM. You realized they were erasing him long before the power-cycle.",
+  'Manasi Chansoria': "PERSONAL MEMORY: You saw the temperature in SR-4 hit 114°F on your dashboard at 20:45 PM. You tried to call V, but the lines had been cut. You were too afraid of Siddak to scream for help.",
+  'Vrishali': "PERSONAL MEMORY: You were monitoring the life-support grid for SR-4. You saw the oxygen scrubbers go offline at 21:03 PM and you reached for the override, but Gunjan told you to 'Let the system stabilize' while the logs were wiping.",
+
+  // THE SUPPORTERS & WITNESSES
+  'Abhishek Gosavi': "PERSONAL MEMORY: You spent the night deleting the 'CRITICAL ERROR' Jira tickets that Harsh had ignored. You felt like you were burying a person, not just data.",
+  'Adarsh': "PERSONAL MEMORY: You were at the security gate at 20:15 PM. You saw V walk in and then saw Iti click the lock. You thought it was a prank, until the power went out at 21:03.",
+  'Ayush Borse': "PERSONAL MEMORY: You were told to stay in the lobby and 'keep the investors happy' at any cost. You heard the muffled thumps from the floor below at 20:50 and you turned up the music.",
+  'Swapnil': "PERSONAL MEMORY: You were tasked with distracting V's family on the phone while his keycard was being revoked. You heard them asking if he was coming home for the birthday cake.",
+  'Mohnish Mhatre': "PERSONAL MEMORY: You saw the 'Log-Wipe-Successful' notification on the main display at 21:10 PM. You looked at Pooja and saw her delete the 'Occupancy Sensor' data for Zone 4.",
+  'Sagar Badiyani': "PERSONAL MEMORY: You leaked the 'Record Breaking Metrics' at 19:10 PM. You knew the code was broken, but you wanted the glory. You saw V's silhouette in the server room and ignored his frantic waving.",
+  'Akshat': "PERSONAL MEMORY: You told the Product Council that if they didn't hit the 19:00 launch, you would bankrupt the company. You were the ghost in the machine that forced their hand.",
+  'Aniket Chandra': "PERSONAL MEMORY: You saw the 'Emergency Fund' being drained at 18:30 PM to pay off the media. You realized V was being erased before he was even dead.",
+  'Gunjan Samtani': "PERSONAL MEMORY: You were the first to say 'We can't stop now' at the 6:00 PM bridge call. You watched the clock hit 19:03 and felt the victory, unaware of the cost.",
+  'Kartik Khandelwal': "PERSONAL MEMORY: You assigned the 'Version 3' label to the broken legacy code. You saw the OOM-RACE errors at 20:58 PM and hid them from the log, just before the power cycle.",
+  'Shrenik Golecha': "PERSONAL MEMORY: You were in Ops when the power-cycle happened. You heard the ventilation fans die. You looked at the board and realized V was still in there, but you said nothing to Naisargi.",
+  'Aanak Sengupta': "PERSONAL MEMORY: You found the discrepancy in the 'Version 3' checksums at 19:20 PM. You tried to alert the Product Council, but your access was restricted. You know the shadow-deploy happened.",
+  'Varun Chopra': "PERSONAL MEMORY: You drafted the 'Technical Malfunction' script at 21:20 PM for the press. You used the exact wording Pooja gave you, knowing it was a blatant lie.",
+  'Pranjal Srivastava': "PERSONAL MEMORY: You edited the security camera footage at 21:45 PM to remove the 10-minute gap where the SR-4 door was locked from the outside by Iti.",
+  'Vaibhav Gupta': "PERSONAL MEMORY: You were the one who noticed the 'Failover Loop' at 19:05 PM but didn't report it because you were too busy helping Sagar with the media metrics.",
+  'Vishnupriya': "PERSONAL MEMORY: You are the guardian of the truth. You saw the shadow-deploy logs before they were wiped. You know that V was not alone in that room—someone was watching the cameras the whole time.",
+  'Surabhi Solanki': "PERSONAL MEMORY: You represent the narrative lab's final stand. You hold the original, un-redacted inboard notes that show the exact second the oxygen failed in SR-4.",
+  'The IT Support': "PERSONAL MEMORY: You were the one who received the 'Emergency Access' request from V's phone at 20:59. You were about to grant it when Shikhar revoked his root credentials.",
+  'The Midnight Intern': "PERSONAL MEMORY: You saw the trash bins at 22:00 PM full of shredded 'COOLING FAILURE' reports. You realized that everyone on this floor is a murderer, even if they never touched the door.",
+  'Mammoth': "PERSONAL MEMORY: You were the physical security lead. You were told by Iti to 'take a break' at 20:10 PM. When you came back at 21:14, the power was back on and a body was on the floor.",
+
+  // ABSENT / GHOSTS (For completeness but not generated)
+  'Sajag Jain': "PERSONAL MEMORY: GHOST - You were the one who first suggested the keycard revocation strategy to the board.",
+  'Srishti Malviya': "PERSONAL MEMORY: GHOST - You were the one who drafted the initial voice-clone script for the founder's fake farewell.",
+  'Padmanabhan Murli': "PERSONAL MEMORY: GHOST - You were the original engineer who designed the failing oxygen scrubbers in SR-4."
 };
 
 const ORIGINAL_CODES = {
@@ -137,7 +176,6 @@ const ORIGINAL_CODES = {
   "Shikhar Sharma": "90111",
   "Ayush Mittal": "92970",
   "Surabhi Solanki": "94326",
-  "Akshat": "89225",
   "Pooja Ghatia": "98180"
 };
 
@@ -195,9 +233,10 @@ async function generateHTMLPosters() {
         const name = parts[0];
         const data = detailsDict[name] || {};
 
-        let finalClue = data.evidence ? 'You hold the access to: ' + data.evidence : 'No physical evidence provided. Rely on your testimony.';
-        if (data.evidence && EVIDENCE_CONTEXT[data.evidence]) {
-          finalClue += '\n\n' + EVIDENCE_CONTEXT[data.evidence];
+        let evidenceFile = data.evidence;
+        let finalClue = evidenceFile ? 'You hold the access to: ' + evidenceFile : 'No physical evidence provided. Rely on your testimony.';
+        if (evidenceFile && EVIDENCE_CONTEXT[evidenceFile]) {
+          finalClue += '\n\n' + EVIDENCE_CONTEXT[evidenceFile];
         }
 
         let guestMemory = PERSONAL_MEMORIES[name] || DEFAULT_MEMORIES_BY_TEAM[parts[1]] || "PERSONAL MEMORY: You were present in the building when V died, but you chose to stay completely silent.";
@@ -297,6 +336,10 @@ async function generateHTMLPosters() {
   const clueDatabase = {};
 
   for (const guest of guests) {
+    if (['Sajag Jain', 'Srishti Malviya', 'Padmanabhan Murli'].includes(guest.name)) {
+      console.log(`SKIPPING Generation for ABSENT guest: ${guest.name}`);
+      continue;
+    }
     const page = await browser.newPage();
 
     // Use ORIGINAL_CODES mapping if available, otherwise generate a deterministic 5-digit code
