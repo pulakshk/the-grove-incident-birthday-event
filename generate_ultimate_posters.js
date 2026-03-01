@@ -323,6 +323,34 @@ async function generateHTMLPosters() {
     });
   }
 
+  // Inject The Midnight Intern
+  if (!guests.some(g => g.name === 'The Midnight Intern')) {
+    guests.push({
+      name: 'The Midnight Intern',
+      team: 'Various',
+      role: 'Unpaid Narrative Intern',
+      mission: 'Ask someone for sign-off on a document that doesn\'t exist.',
+      quirk: 'Always carrying a cold cup of coffee and looking sleep-deprived.',
+      profile: 'Underpaid and over-worked. Sees things the executives ignore.',
+      clue: 'Clue: "I found a shredded paper near the printer at 8:30 PM. It had the word \'Liability\' circled."\n\nCONTEXT: This proves the board was already discussing exit strategies.',
+      memory: 'You saw V and Akshat arguing in the hallway at 18:30 PM.'
+    });
+  }
+
+  // Inject The IT Support
+  if (!guests.some(g => g.name === 'The IT Support')) {
+    guests.push({
+      name: 'The IT Support',
+      team: 'Various',
+      role: 'Freelance Systems Auditor',
+      mission: 'Check everyone\'s phone to ensure they don\'t have malware.',
+      quirk: 'Fixes people\'s laptop screens without being asked.',
+      profile: 'The only person who actually knows how to read the raw logs.',
+      clue: 'Clue: "The server logs show a massive data wipe initiated from the VIP room at exactly 8:15 PM."\n\nCONTEXT: This wipe was the first attempt to hide the shadow deploy.',
+      memory: 'You saw Kovid Poudel sweating profusely at his desk at 21:05 PM.'
+    });
+  }
+
   for (const guest of guests) {
     if (['Sajag Jain', 'Srishti Malviya', 'Padmanabhan Murli', 'Prachi Verma', 'Abhishek Mukharjee', 'Abhishek Gosavi'].includes(guest.name)) {
       console.log(`SKIPPING Generation for ABSENT/LATE guest: ${guest.name}`);
