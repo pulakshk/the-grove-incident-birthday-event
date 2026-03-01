@@ -59,6 +59,22 @@ const EVIDENCE_CONTEXT = {
   'ab-test-raw-export.csv': 'CONTEXT: This raw data export proves the metrics fed to the press were completely fabricated.'
 };
 
+const PERSONAL_MEMORIES = {
+  'Bharat Dhir': 'PERSONAL MEMORY: You were the one who found V\'s body inside Server Room 4 at 21:14 PM. The cooling system was completely overloaded. You haven\'t told anyone what you saw.',
+  'Sajag Jain': 'PERSONAL MEMORY: At 21:00 PM, you received an urgent, off-the-books request from the executive floor to completely deactivate V\'s executive keycard. You clicked confirm.',
+  'Anubhav Gaba': 'PERSONAL MEMORY: You are the engineer who pushed the execute button on the 19:03 Shadow Deploy. You knew the Version 3 code was fake.',
+  'Kovid Poudel': 'PERSONAL MEMORY: At 21:05 PM, you triggered the remote server purge to wipe the logs of the Shadow Deploy. You didn\'t check if Server Room 4 was occupied.',
+  'Siddak Bakshi': 'PERSONAL MEMORY: At 18:55 PM, you personally demanded Product to launch anyway, threatening to tank the company valuation if the metrics delayed.',
+  'Aanak Sengupta': 'PERSONAL MEMORY: You received the critical instability warnings from Ops at 18:45 PM. You deliberately chose not to halt the launch.',
+  'Pranjal Srivastava': 'PERSONAL MEMORY: At 19:15 PM, you were told the metrics were entirely fake. You wrote the press release celebrating the "record-breaking launch" anyway.',
+  'Devashish Rane': 'PERSONAL MEMORY: You drafted a cease-and-desist letter at 20:30 PM aimed at silencing the engineers who were complaining about the shadow deploy.',
+  'Manasi Chansoria': 'PERSONAL MEMORY: You warned the executives at 18:45 PM that Server Room 4 was overheating. They told you to stay quiet.',
+  'Mehul Mohan': 'PERSONAL MEMORY: You told the Product Council "I do not care if it\'s broken. Give me a green dashboard today." You forced the shadow deploy.',
+  'Shubham Jain': 'PERSONAL MEMORY: You built the fake performance model that fed rigged data to the investors.',
+  'Abhishek Gosavi': 'PERSONAL MEMORY: You actively buried the Jira tickets from the engineering floor so the press wouldn\'t find out about the leaks.',
+  'Prachi Verma': 'PERSONAL MEMORY: You were manning the security desk. You watched V walk into Server Room 4 on the cameras at 20:15 PM and said nothing.'
+};
+
 function extractWhatsAppDetails() {
   const rawText = fs.readFileSync(WHATSAPP_MESSAGES_FILE, 'utf-8');
   const sections = rawText.split('## ');
@@ -107,6 +123,9 @@ async function generateHTMLPosters() {
         let finalClue = data.evidence ? 'You hold the access to: ' + data.evidence : 'No physical evidence provided. Rely on your testimony.';
         if (data.evidence && EVIDENCE_CONTEXT[data.evidence]) {
           finalClue += '\n\n' + EVIDENCE_CONTEXT[data.evidence];
+        }
+        if (PERSONAL_MEMORIES[name]) {
+          finalClue += '\n\n' + PERSONAL_MEMORIES[name];
         }
 
         guests.push({
