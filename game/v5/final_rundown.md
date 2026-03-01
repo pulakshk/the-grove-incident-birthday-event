@@ -32,6 +32,7 @@ This is a conspiracy story: no single killer, multiple culpable choices.
 | Naisargi Kothari | Ops & Ground Truth | Flexible | Floor Marshals - Reality Coordinator | Convince two strangers to co-sign your theory before Round 3 ends. |
 | Neil Daftary | Startup Investors | Core | Cap Table Mirage - Valuation Hawk | Convince two strangers to co-sign your theory before Round 3 ends. |
 | Pooja Ghatia | Product Council | Core | Scope Parliament - Narrative PM | Find a person with opposite personality trait and build a joint claim. |
+| Abhishek Gosavi | Culture & Narrative Lab | Flexible | Story Ops - Perception Strategist | Collect one clue from each floor and connect them in 2 sentences. |
 | Pranjal Srivastava | Culture & Narrative Lab | High-engagement | Story Ops - Context DJ | Collect one clue from each floor and connect them in 2 sentences. |
 | Rahul | Culture & Narrative Lab | Flexible | Perception Unit - Context DJ | Find a person with opposite personality trait and build a joint claim. |
 | Ritvik Hedge | Product Council | High-engagement | Feature Tribunal - Roadmap Custodian | Turn one rumor into a verifiable statement with witness name. |

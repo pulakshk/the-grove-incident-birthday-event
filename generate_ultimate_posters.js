@@ -124,7 +124,7 @@ const PERSONAL_MEMORIES = {
 
 const ORIGINAL_CODES = {
   "Aanak Sengupta": "48335",
-  "Abhishek Gosavi": "47092",
+  "Abhishek Gosavi": "78813",
   "Abhishek Mukharjee": "89777",
   "Adarsh": "17013",
   "Aiswarya Mahajan": "32859",
@@ -352,7 +352,7 @@ async function generateHTMLPosters() {
   }
 
   for (const guest of guests) {
-    if (['Sajag Jain', 'Srishti Malviya', 'Padmanabhan Murli', 'Prachi Verma', 'Abhishek Mukharjee', 'Abhishek Gosavi'].includes(guest.name)) {
+    if (['Sajag Jain', 'Srishti Malviya', 'Padmanabhan Murli', 'Prachi Verma', 'Abhishek Mukharjee'].includes(guest.name)) {
       console.log(`SKIPPING Generation for ABSENT/LATE guest: ${guest.name}`);
       continue;
     }
@@ -517,7 +517,7 @@ async function generateHTMLPosters() {
     </html>
     `;
 
-    await page.setContent(html, { waitUntil: 'networkidle0' });
+    await page.setContent(html, { waitUntil: 'networkidle0', timeout: 60000 });
     const bodyHeight = await page.evaluate(() => document.body.scrollHeight);
     await page.setViewport({ width: 1080, height: bodyHeight, deviceScaleFactor: 2 });
 

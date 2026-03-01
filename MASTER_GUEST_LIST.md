@@ -3,6 +3,7 @@
 | Name | Team | Access Code | Evidence |
 |---|---|---|---|
 | Aanak Sengupta | Product Council | **48335** | inboard-notes-v-edit.pdf |
+| Abhishek Gosavi | Culture & Narrative Lab | **78813** | voice-clone-founder.m4a |
 | Adarsh | Culture & Narrative Lab | **17013** | voice-clone-founder.m4a |
 | Aiswarya Mahajan | Culture & Narrative Lab | **32859** | grove-commentary-gen-v4.txt |
 | Akshat | Startup Investors | **89225** | side-letter-v2-signed.pdf |
