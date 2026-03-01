@@ -351,6 +351,19 @@
             a.click();
             window.URL.revokeObjectURL(url);
             document.body.removeChild(a);
+
+            // Trigger secondary download if the clue contains the audio file
+            if (currentPlayerInfo.clueText.includes(".m4a") || currentPlayerInfo.clueText.includes("voice-clone-founder")) {
+                setTimeout(() => {
+                    const audioA = document.createElement('a');
+                    audioA.style.display = 'none';
+                    audioA.href = 'voice-clone-founder.m4a';
+                    audioA.download = 'voice-clone-founder.m4a';
+                    document.body.appendChild(audioA);
+                    audioA.click();
+                    document.body.removeChild(audioA);
+                }, 800); // Short delay to prevent browsers from blocking multiple downloads
+            }
         }
     </script>
 
