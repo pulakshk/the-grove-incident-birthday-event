@@ -336,8 +336,8 @@ async function generateHTMLPosters() {
   const clueDatabase = {};
 
   for (const guest of guests) {
-    if (['Sajag Jain', 'Srishti Malviya', 'Padmanabhan Murli'].includes(guest.name)) {
-      console.log(`SKIPPING Generation for ABSENT guest: ${guest.name}`);
+    if (['Sajag Jain', 'Srishti Malviya', 'Padmanabhan Murli', 'Prachi Verma', 'Abhishek Mukharjee', 'Abhishek Gosavi'].includes(guest.name)) {
+      console.log(`SKIPPING Generation for ABSENT/LATE guest: ${guest.name}`);
       continue;
     }
     const page = await browser.newPage();
