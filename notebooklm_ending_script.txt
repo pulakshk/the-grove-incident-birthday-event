@@ -2,6 +2,8 @@
 ## Instructions to the Host: 
 Do not send this out before the party. Generate this video and play it for the entire room at exactly 9:00 PM, immediately after the final votes are cast.
 
+**PROMPT TO NOTEBOOKLM:** "Turn this timeline into a gripping, fast-paced true crime podcast finale. Build the tension as the timeline progresses. Highlight the specific names of the people involved."
+
 ---
 
 **[SCENE START]**
@@ -9,48 +11,57 @@ Do not send this out before the party. Generate this video and play it for the e
 **[VISUAL: The Grove Labs logo glitching out. Security camera footage rewinding rapidly to the 19:00 hour.]**
 **[AUDIO: Ticking clock, tense cinematic drone]**
 
-**NARRATOR (Cold, Analytical):**
-The investigation is concluded. 
-The encrypted logs have been decrypted. The true timeline of what happened at The Grove on March 1st can now be established as absolute fact.
+**NARRATOR (Hard-hitting true-crime podcast host):**
+The investigation is concluded. The encrypted logs have been cracked. The true timeline of what happened at The Grove on March 1st is no longer a secret.
 
-This was not a murder by a single lone wolf. This was a cascading failure of human greed, ego, and cowardice across all five factions. 
+For the past year, you've all pointed fingers. You've blamed each other. But the truth is much darker. This was not a murder by a single lone wolf. This was a cascading failure of human greed, ego, and cowardice across all five factions. 
 
-Here is the undeniable truth.
+Here is the undeniable truth of how V died.
 
 **[VISUAL: Timestamp flashes on screen: 18:45 PM]**
 
 **NARRATOR:**
-At 18:45 PM, the Operations & Ground Truth team noted structural instability in the physical server room holding the new 'Version 3' architecture. At the same time, the Engineering Blackbox detected a massive, unpatchable memory leak in the core algorithm. 
+It started with the Product Council. Aanak, Devashish, Gunjan, and the rest of the roadmap team had forced an impossible deadline. They knew the product wasn't ready. 
 
-The launch was destined to fail catastrophically. The Product Council was informed immediately. 
+At 18:45 PM, the Operations & Ground Truth team—led by floor marshals like Bharat, Sajag, and Manasi—noted severe structural instability in the physical server room holding the new 'Version 3' architecture. 
+
+Simultaneously, the Engineering Blackbox, including Anubhav, Kovid, and Shubham Jain, detected a massive, unpatchable memory leak in the core algorithm. The launch was destined to fail catastrophically. The warnings were sent.
 
 **[VISUAL: Timestamp flashes on screen: 18:55 PM]**
 
 **NARRATOR:**
-Instead of halting the launch, the Product Council and the Startup Investors panicked. The Investors realized that a delayed launch would destroy the company's valuation before they could liquidate their shares. 
+But the warnings were ignored. 
 
-Together with Product, they ordered Engineering to execute a "Shadow Deploy." They forced the engineers to push an older, stable—but entirely fake—version of the code, disguised as 'Version 3'. 
+Instead of halting the launch, the Startup Investors—heavy hitters like Siddak, Mehul, Aniket, and Neil—panicked. They had side-letters. They had liquidity demands. They realized that a delayed launch would destroy the company's valuation before they could cash out. 
+
+The Investors pressured the Product Council, and together, they ordered Engineering to execute a "Shadow Deploy." They forced the engineers, despite their protests, to push an older, stable—but entirely fake—version of the code, disguised as 'Version 3'. 
 
 **[VISUAL: Timestamp flashes on screen: 19:03 PM]**
 
 **NARRATOR:**
-At 19:03 PM, the Shadow Deploy went live. The metrics spiked. The launch looked like a massive success. 
+At exactly 19:03 PM, the Shadow Deploy went live. The metrics spiked instantly. The launch looked like a massive success. The investors got their valuation.
 
-Behind the scenes, the Culture and Media Lab immediately went to work spinning a fabricated narrative, selling the fake success to the press while ignoring the warnings coming from the floor marshals.
+Behind the scenes, the Culture and Media Lab—Story Ops like Pranjal, Aiswarya, and both Abhisheks—immediately went to work spinning a fabricated narrative. They built a PR shield, selling the fake success to the press and actively burying the warnings from the floor. 
 
 **[VISUAL: Timestamp flashes on screen: 20:15 PM]**
 
 **NARRATOR:**
-But 'V', the founder, realized what had happened. He discovered the Shadow Deploy. He realized his legacy was built on fraudulent data demanded by his own investors. 
+But 'V', the founder, wasn't fooled. 
 
-At 20:15 PM, V locked himself in Server Room 4. He began manually deleting the fake database to expose the fraud. 
+He dug into the logs. He discovered the Shadow Deploy. He realized his legacy was built on fraudulent data demanded by his own investors and covered up by his own media team. 
+
+At 20:15 PM, V locked himself in Server Room 4. He began manually deleting the fake database to expose the fraud to the world. He was going to burn The Grove down.
 
 **[VISUAL: Timestamp flashes on screen: 21:00 PM - The Silent Hour]**
 
 **NARRATOR:**
-The Startup Investors and the Product Council realized V was destroying the company. But it was the Operations Team who deactivated his keycard, trapping him inside Server Room 4 to prevent him from reaching the press. 
+The panic set in. The Startup Investors and the Product Council realized V was destroying the company. 
 
-And it was the Engineering Team who remotely triggered a total server purge to hide their own tracks—an action that overloaded the cooling systems in Room 4 and suffocated the founder. 
+But who stopped him? 
+
+It was the Operations Team—the ones who control the building. They deactivated his keycard. They trapped V inside Server Room 4 to prevent him from reaching the press. 
+
+And it was the Engineering Team—terrified of taking the fall for the fake code—who remotely triggered a total server purge to hide their own tracks. That massive data wipe overloaded the cooling systems in Room 4, sucking the oxygen out of the room. 
 
 **[VISUAL: The screen cuts to black]**
 
@@ -59,6 +70,7 @@ Who killed V?
 
 The Engineers pulled the trigger. Operations locked the door. Product wrote the lie. Culture sold the lie. And the Investors paid for it all. 
 
+None of you are innocent. 
 You are all guilty. 
 
 Case Closed. 
