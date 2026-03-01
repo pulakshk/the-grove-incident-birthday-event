@@ -72,16 +72,32 @@ const PERSONAL_MEMORIES = {
   'Mehul Mohan': 'PERSONAL MEMORY: You told the Product Council "I do not care if it\'s broken. Give me a green dashboard today." You forced the shadow deploy.',
   'Shubham Jain': 'PERSONAL MEMORY: You built the fake performance model that fed rigged data to the investors.',
   'Abhishek Gosavi': 'PERSONAL MEMORY: You actively buried the Jira tickets from the engineering floor so the press wouldn\'t find out about the leaks.',
-  'Prachi Verma': 'PERSONAL MEMORY: You were manning the security desk. You watched V walk into Server Room 4 on the cameras at 20:15 PM and said nothing.'
+  'Prachi Verma': 'PERSONAL MEMORY: You were manning the security desk. You watched V walk into Server Room 4 on the cameras at 20:15 PM and said nothing.',
+  'Neil Daftary': 'PERSONAL MEMORY: You signed off on the side-letter at 17:55 PM, knowing it was a predatory terms sheet that would force V to launch at any cost.',
+  'Sagar Badiyani': 'PERSONAL MEMORY: You were the one who leaked the "record-breaking metrics" to the press at 19:10 PM, before you even verified if the code was real.',
+  'Akshat': 'PERSONAL MEMORY: You told the Product Council that if they didn\'t hit the 19:00 launch window, you would trigger a board-level coup to remove V.',
+  'Aniket Chandra': 'PERSONAL MEMORY: You saw the unrecorded treasury transfers at 18:30 PM. You realized someone was stealing from the company and you chose to ignore it for your own payout.',
+  'Pooja Ghatia': 'PERSONAL MEMORY: You personally edited the roadmap at 18:00 PM to remove all the "High Risk" tags from the Engineering tickets.',
+  'Gunjan Samtani': 'PERSONAL MEMORY: You were in the meeting where V tried to delay the launch. You were the first one to speak up and say "We can\'t stop now, we have a valuation to protect".',
+  'Kartik Khandelwal': 'PERSONAL MEMORY: You assigned the fake "Version 3" label to the old code deployment at 18:50 PM.',
+  'Ritvik Hedge': 'PERSONAL MEMORY: You saw the "Critical Flaw" emails at 18:35 PM and marked them as "Read" without replying.',
+  'Shubh Khandelwal': 'PERSONAL MEMORY: You drafted the internal memo that blamed "Technical Debt" for the server room instability, knowing it was actually a cooling failure.',
+  'Varun Chopra': 'PERSONAL MEMORY: You were the one who told the Culture team to start drafting the "Success" story at 18:00 PM, before the code was even finished.',
+  'Harsh Bhimrajka': 'PERSONAL MEMORY: You saw the memory leak at 18:50 PM and decided to ignore it because you wanted to go home for the night.',
+  'Ayush Mittal': 'PERSONAL MEMORY: You were the one who provided the root access password to the Product Council allowing them to override the deployment at 19:03 PM.',
+  'Shikhar Sharma': 'PERSONAL MEMORY: You were the one who set the "Shadow Deploy" script to auto-delete its own logs after execution.',
+  'Vaibhav Gupta': 'PERSONAL MEMORY: You saw the 19:03 override happening in real-time and you didn\'t raise the alarm.',
+  'Iti Kathed': 'PERSONAL MEMORY: You saw V walking into Server Room 4 at 20:15 PM and you locked the external security door behind him to prevent "interruptions".',
+  'Naisargi Kothari': 'PERSONAL MEMORY: You were the one who authorized the power-cycling of the server cooling system at 21:03 PM, which caused the oxygen levels in Room 4 to plummet.'
 };
 
 const DEFAULT_MEMORIES_BY_TEAM = {
-  'Startup Investors': 'PERSONAL MEMORY: You were on the 18:00 call where they admitted the metrics were shaky. You told them to fix it or the funding would be pulled.',
-  'Product Council': 'PERSONAL MEMORY: You saw the unpatched bug list at 18:30 PM. You decided it wasn\'t a blocker and hid the JIRA tickets from the executives.',
-  'Engineering Blackbox': 'PERSONAL MEMORY: You were in the core Slack channel when the 19:03 deploy was ordered. You copy-pasted the fake code blocks yourself because you were afraid of being fired.',
-  'Ops & Ground Truth': 'PERSONAL MEMORY: You saw V running furiously down the hall towards Server Room 4 at 20:14 PM. You didn\'t stop him, even though you knew the cooling was offline.',
-  'Culture & Narrative Lab': 'PERSONAL MEMORY: You were told at 19:30 PM that the launch was a total failure. You spent the next hour drafting tweets about how it was a \'"record-breaking success"\' to distract the press.',
-  'Culture & Narrative/Media': 'PERSONAL MEMORY: You were told at 19:30 PM that the launch was a total failure. You spent the next hour drafting tweets about how it was a \'"record-breaking success"\' to distract the press.'
+  'Startup Investors': 'PERSONAL MEMORY: Your greed at 18:00 PM led you to threaten the founder. You told them that if the valuation didn\'t hit the target tonight, you\'d see them in court.',
+  'Product Council': 'PERSONAL MEMORY: You saw the unpatched bug list at 18:30 PM. You decided it wasn\'t a "blocker" and actively concealed the risk level from the technical floor.',
+  'Engineering Blackbox': 'PERSONAL MEMORY: You copy-pasted the fake code blocks into the 19:03 deploy yourself. You were afraid of being fired, but you knew you were breaking the system.',
+  'Ops & Ground Truth': 'PERSONAL MEMORY: You were the one who told the security desk to ignore the status alerts coming from Server Room 4 because the "Launch Party" was more important.',
+  'Culture & Narrative Lab': 'PERSONAL MEMORY: You were told at 19:30 PM that the launch was a total failure. You spent the next hour drafting fake testimonials to drown out the negative press.',
+  'Culture & Narrative/Media': 'PERSONAL MEMORY: You were told at 19:30 PM that the launch was a total failure. You spent the next hour drafting fake testimonials to drown out the negative press.'
 };
 
 function extractWhatsAppDetails() {
