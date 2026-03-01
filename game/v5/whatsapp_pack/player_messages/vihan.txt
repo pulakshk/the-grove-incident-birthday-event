@@ -1,0 +1,30 @@
+THE GROVE INCIDENT - CONFIDENTIAL PLAYER BRIEF
+
+Hi Vihan, your role is locked.
+
+What you must know before game start:
+- Plot: One year after V's death at Grove Labs launch night, an archive appears at the party. It contains deploy logs, treasury trails, and edited board notes. From 8:00 PM, teams investigate in rounds and build a conspiracy chain.
+- Your Team: Engineering Blackbox
+- Team objective: Prove exactly where shadow deploy, auth risk, and crash intersected.
+- Enemy team: Startup Investors
+- Team superpower (satire): Can explain every failure perfectly, 15 minutes after it already happened.
+- Team irony: They hate vague language but write incident updates no one can parse.
+
+Your character:
+- Alias: Systems Switcher
+- Public profile: Engineering Blackbox. Newly hired systems engineer. Was not aware of the version 3 bug.
+- Corporate superpower: Can translate corporate jargon into one honest sentence.
+- Live mission: Figure out who triggered the power cycle that killed the oxygen.
+- Evidence lane: prod-deploy-log-7:03.txt
+
+Rules before 8 PM:
+1) Keep this brief private.
+2) Stay in character but keep it fun.
+3) Do not accuse anyone before Round 1 starts.
+
+Rules during game:
+1) Speak to at least 2 people outside your team.
+2) Every accusation needs 1 witness + 1 artifact.
+3) If your teammate is missing, your captain can activate their handoff packet.
+
+Your secret access code for the decryption terminal: 22222
