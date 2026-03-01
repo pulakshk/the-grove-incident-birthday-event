@@ -8,9 +8,9 @@ This is a conspiracy story: no single killer, multiple culpable choices.
 ## Everyone's Role
 | Name | Team | Importance | Role Alias | Mission Hook |
 |---|---|---|---|---|
+| Name | Team | Importance | Role Alias | Mission Hook |
+|---|---|---|---|---|
 | Aanak Sengupta | Product Council | High-engagement | Scope Parliament - Roadmap Custodian | Use your clue to defend someone first, then accuse someone else. |
-| Abhishek Gosavi | Culture & Narrative Lab | Flexible | Story Ops - Perception Strategist | Collect one clue from each floor and connect them in 2 sentences. |
-| Abhishek Mukharjee | Culture & Narrative Lab | Optional | Story Ops - Perception Strategist | Get one late guest fully onboarded using only your artifact summary. |
 | Adarsh | Culture & Narrative Lab | Flexible | Perception Unit - Narrative Auditor | Run a 60-second standup with three people outside your team. |
 | Aiswarya Mahajan | Culture & Narrative Lab | High-engagement | Story Ops - Context DJ | Get one late guest fully onboarded using only your artifact summary. |
 | Akshat | Startup Investors | Flexible | Cap Table Mirage - Valuation Hawk | Collect one clue from each floor and connect them in 2 sentences. |
@@ -31,25 +31,25 @@ This is a conspiracy story: no single killer, multiple culpable choices.
 | Mohnish Mhatre | Culture & Narrative Lab | Flexible | Perception Unit - Context DJ | Get one person from your enemy team to admit a timeline doubt. |
 | Naisargi Kothari | Ops & Ground Truth | Flexible | Floor Marshals - Reality Coordinator | Convince two strangers to co-sign your theory before Round 3 ends. |
 | Neil Daftary | Startup Investors | Core | Cap Table Mirage - Valuation Hawk | Convince two strangers to co-sign your theory before Round 3 ends. |
-| Padmanabhan Murli | Engineering Blackbox | Flexible | Deploy Syndicate - Deploy Cartographer | Find a person with opposite personality trait and build a joint claim. |
 | Pooja Ghatia | Product Council | Core | Scope Parliament - Narrative PM | Find a person with opposite personality trait and build a joint claim. |
-| Prachi Verma | Ops & Ground Truth | Optional | Floor Marshals - Reality Coordinator | Find a person with opposite personality trait and build a joint claim. |
 | Pranjal Srivastava | Culture & Narrative Lab | High-engagement | Story Ops - Context DJ | Collect one clue from each floor and connect them in 2 sentences. |
 | Rahul | Culture & Narrative Lab | Flexible | Perception Unit - Context DJ | Find a person with opposite personality trait and build a joint claim. |
 | Ritvik Hedge | Product Council | High-engagement | Feature Tribunal - Roadmap Custodian | Turn one rumor into a verifiable statement with witness name. |
 | Sagar Badiyani | Startup Investors | Core | Liquidity Coven - Valuation Hawk | Convince two strangers to co-sign your theory before Round 3 ends. |
-| Sajag Jain | Ops & Ground Truth | Core | Floor Marshals - Floor Marshal | Turn one rumor into a verifiable statement with witness name. |
+| Sarthak | Startup Investors | Core | Cap Table Mirage - Liquidity Manager | Ensure no one finds out about the 18:45 emergency transfer. |
 | Shaunak | Culture & Narrative Lab | Flexible | Story Ops - Signal Composer | Trade one clue only after receiving a signed contradiction. |
 | Shikhar Sharma | Engineering Blackbox | High-engagement | Log Custodians - Auth Sentinel | Use your clue to defend someone first, then accuse someone else. |
 | Shrenik Golecha | Ops & Ground Truth | Flexible | Execution Bureau - Floor Marshal | Extract one concrete timestamp from someone speaking in vague terms. |
 | Shubh Khandelwal | Product Council | High-engagement | Scope Parliament - Narrative PM | Collect one clue from each floor and connect them in 2 sentences. |
 | Shubham Jain | Engineering Blackbox | Core | Signal Engineers - Data Forensic | Find a person with opposite personality trait and build a joint claim. |
 | Siddak Bakshi | Startup Investors | Core | Liquidity Coven - Valuation Hawk | Collect one clue from each floor and connect them in 2 sentences. |
-| Srishti Malviya | Culture & Narrative Lab | Flexible | Perception Unit - Signal Composer | Find a person with opposite personality trait and build a joint claim. |
 | Swapnil | Product Council | Flexible | Backlog Ministry - Narrative PM | Get one late guest fully onboarded using only your artifact summary. |
 | Vaibhav Gupta | Engineering Blackbox | High-engagement | Deploy Syndicate - Deploy Cartographer | Trade one clue only after receiving a signed contradiction. |
 | Varun Chopra | Product Council | High-engagement | Scope Parliament - Narrative PM | Turn one rumor into a verifiable statement with witness name. |
+| Vihan | Engineering Blackbox | Core | Deploy Syndicate - Systems Switcher | Convince Engineering that the power-cycle was inevitable. |
 | Vrishali | Ops & Ground Truth | Flexible | Execution Bureau - Escalation Keeper | Extract one concrete timestamp from someone speaking in vague terms. |
+| Vishnupriya | Various | Core | Cap Table Mirage - Plus-One | See mission in buffer section. |
+| Surabhi Solanki | Various | Core | Signal Engineers - Plus-One | See mission in buffer section. |
 
 ## Buffer Characters & Plus-Ones
 - The Founder's Plus-One (Vishnupriya): Mehul's girlfriend. Mission: "Convince two strangers that Mehul is completely innocent before Round 2." | clue: "I saw Mehul checking his phone nervously at 19:03 PM."

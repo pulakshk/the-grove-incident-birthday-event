@@ -23,9 +23,9 @@ Here is the undeniable truth of how V died.
 **NARRATOR:**
 It started with the Product Council. Aanak, Devashish, Gunjan, Kartik, Pooja, Ritvik, Shubh, Swapnil, and Varun had forced an impossible deadline. They knew the product wasn't ready. 
 
-At 18:45 PM, the Operations & Ground Truth team—led by floor marshals like Bharat, Iti, Mammoth, Manasi, Naisargi, Prachi, Sajag, Shrenik, and Vrishali—noted severe structural instability in the physical server room holding the new 'Version 3' architecture. 
+At 18:45 PM, the Operations & Ground Truth team—led by floor marshals like Bharat, Iti, Mammoth, Manasi, Naisargi, Shrenik, and Vrishali—noted severe structural instability in the physical server room holding the new 'Version 3' architecture. 
 
-Simultaneously, the Engineering Blackbox, including Anubhav, Ayush Mittal, Harsh, Kovid, Padmanabhan, Shikhar, Shubham, and Vaibhav, detected a massive, unpatchable memory leak in the core algorithm. The launch was destined to fail catastrophically. The warnings were sent.
+Simultaneously, the Engineering Blackbox, including Anubhav, Ayush Mittal, Harsh, Kovid, Shikhar, Shubham, Vaibhav, and Vihan, detected a massive, unpatchable memory leak in the core algorithm. The launch was destined to fail catastrophically. The warnings were sent.
 
 **[VISUAL: Timestamp flashes on screen: 18:55 PM]**
 
@@ -41,7 +41,7 @@ The Investors pressured the Product Council, and together, they ordered Engineer
 **NARRATOR:**
 At exactly 19:03 PM, the Shadow Deploy went live. The metrics spiked instantly. The launch looked like a massive success. The investors got their valuation, with Sarthak already setting up emergency payouts.
 
-Behind the scenes, the Culture and Media Lab—Story Ops like Abhishek Gosavi, Abhishek Mukharjee, Adarsh, Aiswarya, Ayush Borse, Mohnish, Pranjal, Rahul, Shaunak, and Srishti—immediately went to work spinning a fabricated narrative. They built a PR shield, selling the fake success to the press and actively burying the warnings from the floor. 
+Behind the scenes, the Culture and Media Lab—Story Ops like Adarsh, Aiswarya, Ayush Borse, Mohnish, Pranjal, Rahul, and Shaunak—immediately went to work spinning a fabricated narrative. They built a PR shield, selling the fake success to the press and actively burying the warnings from the floor. 
 
 **[VISUAL: Timestamp flashes on screen: 20:15 PM]**
 
