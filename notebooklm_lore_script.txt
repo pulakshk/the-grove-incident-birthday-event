@@ -1,46 +1,41 @@
-# THE GROVE INCIDENT: BACKGROUND LORE SCRIPT
-## Instructions for NotebookLM / Video Generator
-Synthesize the following text as a dramatic, true-crime documentary style introduction or an urgent hacker manifesto. This video should be sent to players BEFORE the party to set the tone.
+# THE GROVE INCIDENT: AUDIO GENERATION SCRIPT
+## Instructions for NotebookLM
+Synthesize the following text as a gripping, true-crime podcast or an urgent corporate whistleblower manifesto. Read this clearly and dramatically. This is the introductory lore for a real-life murder mystery party.
 
 ---
 
 **[SCENE START]**
 
-**[VISUAL: Glitching server code, security camera footage, dark atmospheric lighting]**
-**[AUDIO: Deep synth bass, static, typing sounds]**
+Exactly one year ago, the tech world watched as 'The Grove' prepared for its massive, highly-anticipated Version 3 launch. 
 
-**NARRATOR (Distorted, Urgent):**
-Exactly one year ago, on March 1st, the tech world watched as 'The Grove' prepared for its massive, highly-anticipated Version 3 launch.
+It was supposed to be a triumph. A unicorn valuation. A flawless victory.
 
-It was supposed to be a triumph. A unicorn valuation. A flawless victory. 
+But behind closed doors, the reality was a nightmare. The timeline you were sold was a lie. 
 
-But behind closed doors, the reality was a nightmare.
+Here is what actually happened on launch day:
+*   First, internal memos show someone flagged a critical system flaw, but leadership ignored the warning and pushed ahead.
+*   Then, at exactly 19:03 PM, server logs show a massive and unauthorized "shadow deployment." Lines of code were completely overwritten. The performance metrics sent to the Startup Investors were entirely faked.
+*   For the next hour, total panic gripped the executive floor. Drafts of legal suppression documents were written. 
+*   And finally, at 21:14 PM... 'V'—the visionary founder—was discovered dead.
 
-At exactly 7:03 PM, the server logs show a massive, unauthorized shadow deployment. Lines of code were overwritten. Safety protocols were bypassed. The performance metrics sent to the Startup Investors did not match the internal reality held by the Engineering Blackbox.
-
-For one hour, total panic gripped the executive floor. The Product Council scrambled to draft legal suppression documents. The Operations team lost control of the physical space. The Culture and Media lab spun a fabricated narrative to hide the leaks.
-
-And then... the unthinkable happened.
-
-At 9:14 PM, 'V'—the visionary founder—was discovered dead. 
-
-The launch went ahead. The incident was completely buried. An ecosystem of lies was built over the ashes, and everyone in the building that night was sworn to secrecy. 
+The launch went ahead anyway. The incident was completely buried. An ecosystem of lies was built over the ashes, and everyone in the building that night was sworn to secrecy.
 
 Until tonight.
 
-**[VISUAL: The words 'DEAD DROP ACTIVATED' flash on screen in red]**
-**[AUDIO: A sharp alarm, followed by a heavy heartbeat pulse]**
+Tonight, a dead-drop containing shredded memos, deleted messages, and altered access logs has been triggered. Every person who was in the building that night has received a fragment of the truth. 
 
-**NARRATOR:**
-Tonight, an encrypted archive has been leaked. A dead-drop containing shredded memos, deleted slack messages, and altered access logs has been triggered. Every person who was in the building that night has received a fragment of the truth. A single piece of evidence. 
+You belong to one of five factions. Listen closely to understand your allegiance:
 
-You belong to one of five factions: The Startup Investors, The Product Council, The Engineering Blackbox, Ops & Ground Truth, or the Culture & Media Lab. 
+1.  **The Startup Investors:** You hold the leverage. You are looking for the scapegoat who destroyed your portfolio and faked the numbers.
+2.  **The Product Council:** You wrote the roadmap that ultimately failed. Your goal is to control the narrative and blame the technical collapse on Engineering.
+3.  **The Engineering Blackbox:** You know the system was broken, but you were pushed to launch anyway. You hold the deepest secrets of what actually happened at 19:03.
+4.  **Ops & Ground Truth:** You control the physical space. You know exactly who walked into what room, and what time the bodies hit the floor.
+5.  **The Culture & Media Lab:** You spun a catastrophic failure into a "success story." You are trying to find out who handed you the fake data in the first place.
 
-Your faction holds a piece of the puzzle, but you are not innocent. You must decrypt your evidence. You must cross-examine the other teams. You must defend your own timeline.
+Your faction holds a piece of the puzzle, but you are not innocent. You must decrypt your evidence at the terminal. You must cross-examine the other teams. You must defend your own timeline.
 
 The doors lock at 8:00 PM. 
-Trust no one. Verify everything. 
-Find out what really happened at 7:03 PM, and who made the decision that killed the company... and the founder.
+Trust no one. Verify everything. Find out what really happened at 19:03, and who made the decision that killed the founder.
 
 Welcome to Case 27. Welcome to The Grove Incident.
 
