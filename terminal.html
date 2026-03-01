@@ -367,7 +367,7 @@
 
             // Dynamically trigger secondary downloads for any referenced media files in the clue text
             // Match common filenames with extensions .m4a, .mp3, .pdf, .csv, .xlsx, .txt
-            const fileRegex  = /[a-zA-Z0-9_\-]+\.(pdf|csv|txt|m4a|mp3|xlsx)/gi;
+            const fileRegex = /[a-zA-Z0-9_\-:]+\.(pdf|csv|txt|m4a|mp3|xlsx)/gi;
             const matches = currentPlayerInfo.clueText.match(fileRegex);
 
             if (matches) {
