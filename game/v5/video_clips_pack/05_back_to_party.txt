@@ -1,0 +1,14 @@
+CLIP: 05_back_to_party
+Duration: 15s
+Hook text: Case closed. Music up.
+
+Shot list:
+- Music fades in, crowd cheers
+- Hall transitions back to party vibe
+- Quick montage of laughs/dance
+
+Voiceover:
+Investigation complete. Birthday mode restored.
+
+On-screen caption:
+From interrogation to celebration.

@@ -1,0 +1,14 @@
+CLIP: 04_reveal_chain
+Duration: 30s
+Hook text: Not one killer. A chain.
+
+Shot list:
+- Host reading chain points
+- Cutaway: people realizing links
+- Final vote slips in bowl
+
+Voiceover:
+This was conspiracy by omission, not a solo act.
+
+On-screen caption:
+Board vote ends. Reveal begins.

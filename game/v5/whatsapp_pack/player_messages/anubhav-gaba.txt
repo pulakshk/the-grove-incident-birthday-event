@@ -1,0 +1,34 @@
+THE GROVE INCIDENT - CONFIDENTIAL PLAYER BRIEF
+
+Hi Anubhav, your role is locked.
+
+What you must know before game start:
+- Plot: One year after V's death at Grove Labs launch night, an archive appears at the party. It contains deploy logs, treasury trails, and edited board notes. From 8:00 PM, teams investigate in rounds and build a conspiracy chain.
+- Your Team: Engineering Blackbox
+- Team objective: Prove where shadow deploy, auth risk, and crash intersected.
+- Enemy team: Startup Investors
+- Team superpower (satire): Can explain every failure perfectly, 15 minutes after it already happened.
+- Team irony: They hate vague language but write incident updates no one can parse.
+
+Your character:
+- Alias: Deploy Syndicate - Incident Decoder
+- Public profile: Product Manager, Meesho. Known for being gaslighter; carries untapped context from the launch night.
+- Corporate superpower: Can sense when a metric is technically true but emotionally fake.
+- Live mission: Find a person with opposite personality trait and build a joint claim.
+- Evidence lane: prod-deploy-log-7:03.txt
+
+Rules before 8 PM:
+1) Keep this brief private.
+2) Stay in character but keep it fun.
+3) Do not accuse anyone before Round 1 starts.
+
+Rules during game:
+1) Speak to at least 2 people outside your team.
+2) Every accusation needs 1 witness + 1 artifact.
+3) If your teammate is missing, your captain can activate their handoff packet.
+
+Logistics:
+- Doors 5:00 PM | Game starts 8:00 PM | Twist 8:45 PM | Reveal 9:00 PM | Venue: Grove A7
+- BYOB welcome (especially post-8 PM arrivals).
+
+Reply with: LOCKED

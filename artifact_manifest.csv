@@ -1,0 +1,10 @@
+Artifact,Contains,Implicates,Revealed
+inboard-notes-v-edit.pdf,Edited vs original board notes,"V, Sajag, Bharat",Round 1
+grove-commentary-gen-v4.txt,Prompt system for narrative smoothing,"Shaunak, Rahul",Round 2
+treasury-map-Nov.xlsx,Wallet moves and off-chain transfers,"Siddak, Aniket, Neil, Sagar",Round 2
+voice-clone-founder.mp3,Synthetic memo (AAC payload). Prefer .m4a for playback,"Neil (author), V (voice clone)",Twist 2 (8:45 PM)
+prod-deploy-log-7:03.txt,Shadow deploy + override chain,"Kovid, Anubhav, Sagar",Round 3
+ab-test-raw-export.csv,Internal vs investor metrics,"Shubham, Shubh",Round 3
+auth-vuln-P0-jira.pdf,Unpatched P0 auth issue,"Harsh, leadership",Round 3
+cease-desist-draft.pdf,Legal suppression draft,Pooja,Round 4
+side-letter-v2-signed.pdf,Treasury authority side-letter,"Siddak, Aniket",Round 4

@@ -1,0 +1,14 @@
+CLIP: 03_deepfake_twist
+Duration: 20s
+Hook text: Fake voice. Real panic.
+
+Shot list:
+- Speaker close-up as memo plays
+- Reaction shots of 3 players
+- Host points to evidence board
+
+Voiceover:
+The voice is synthetic. The pressure is real.
+
+On-screen caption:
+Twist at 8:45 PM.

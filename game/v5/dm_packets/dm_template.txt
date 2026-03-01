@@ -1,0 +1,9 @@
+DM Template (send with character PDF)
+
+Hey {first_name} — your Grove Incident role is locked.
+Team: {team}
+Alias: {alias}
+Your mission starts when you enter the house.
+Rule: keep this card private till 8:00 PM. Bring your best poker face.
+
+Doors 5:00 PM | Story starts 8:00 PM sharp | Venue: Grove A7

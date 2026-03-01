@@ -1,0 +1,14 @@
+CLIP: 01_dead_drop_teaser
+Duration: 20s
+Hook text: One year. One archive. Too many alibis.
+
+Shot list:
+- Close-up: phone/laptop showing /vault/dead-drop-27.zip
+- Cut to: dim hall and people arriving
+- Cut to: printed team cards on table
+
+Voiceover:
+Tonight, truth is version-controlled.
+
+On-screen caption:
+The Grove Incident begins at 8 PM.

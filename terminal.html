@@ -365,8 +365,27 @@
             window.URL.revokeObjectURL(url);
             document.body.removeChild(a);
 
-            // Trigger secondary download if the clue contains the audio file
-            if (currentPlayerInfo.clueText.includes(".m4a") || currentPlayerInfo.clueText.includes("voice-clone-founder")) {
+            // Dynamically trigger secondary downloads for any referenced media files in the clue text
+            // Match common filenames with extensions .m4a, .mp3, .pdf, .csv, .xlsx, .txt
+            const fileRegex  = /[a-zA-Z0-9_\-]+\.(pdf|csv|txt|m4a|mp3|xlsx)/gi;
+            const matches = currentPlayerInfo.clueText.match(fileRegex);
+
+            if (matches) {
+                // Deduplicate filenames
+                const uniqueFiles = [...new Set(matches)];
+                uniqueFiles.forEach((file, index) => {
+                    setTimeout(() => {
+                        const fileA = document.createElement('a');
+                        fileA.style.display = 'none';
+                        fileA.href = file;
+                        fileA.download = file;
+                        document.body.appendChild(fileA);
+                        fileA.click();
+                        document.body.removeChild(fileA);
+                    }, 800 + (index * 800)); // Stagger downloads to prevent browser blocking
+                });
+            } else if (currentPlayerInfo.clueText.includes("voice-clone-founder")) {
+                // Hard fallback just in case the extension isn't in the raw text
                 setTimeout(() => {
                     const audioA = document.createElement('a');
                     audioA.style.display = 'none';
@@ -375,7 +394,7 @@
                     document.body.appendChild(audioA);
                     audioA.click();
                     document.body.removeChild(audioA);
-                }, 800); // Short delay to prevent browsers from blocking multiple downloads
+                }, 800);
             }
         }
         // Anti-Cheat: Disable Right Click, F12, and DevTools

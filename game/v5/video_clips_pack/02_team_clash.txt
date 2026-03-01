@@ -1,0 +1,14 @@
+CLIP: 02_team_clash
+Duration: 25s
+Hook text: Two teams. One contradiction.
+
+Shot list:
+- Split frame: two teams arguing
+- Timer countdown at 90 seconds
+- Hand writing accusation on paper
+
+Voiceover:
+One bad timestamp can collapse the whole story.
+
+On-screen caption:
+Witness + artifact or it does not count.

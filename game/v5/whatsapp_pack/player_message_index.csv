@@ -1,0 +1,43 @@
+name,team,likelihood,importance,message_file
+Aanak Sengupta,Product Council,high,High-engagement,player_messages/aanak-sengupta.txt
+Abhishek Gosavi,Culture & Narrative Lab,medium,Flexible,player_messages/abhishek-gosavi.txt
+Abhishek Mukharjee,Culture & Narrative Lab,unknown,Optional,player_messages/abhishek-mukharjee.txt
+Adarsh,Culture & Narrative Lab,medium,Flexible,player_messages/adarsh.txt
+Aiswarya Mahajan,Culture & Narrative Lab,high,High-engagement,player_messages/aiswarya-mahajan.txt
+Akshat,Startup Investors,medium,Flexible,player_messages/akshat.txt
+Aniket Chandra,Startup Investors,high,Core,player_messages/aniket-chandra.txt
+Anubhav Gaba,Engineering Blackbox,medium,Core,player_messages/anubhav-gaba.txt
+Ayush Borse,Culture & Narrative Lab,high,High-engagement,player_messages/ayush-borse.txt
+Ayush Mittal,Engineering Blackbox,confirm,High-engagement,player_messages/ayush-mittal.txt
+Bharat Dhir,Ops & Ground Truth,confirm,Core,player_messages/bharat-dhir.txt
+Devashish Rane,Product Council,high,High-engagement,player_messages/devashish-rane.txt
+Gunjan Samtani,Product Council,high,High-engagement,player_messages/gunjan-samtani.txt
+Harsh Bhimrajka,Engineering Blackbox,high,Core,player_messages/harsh-bhimrajka.txt
+Iti Kathed,Ops & Ground Truth,unknown,Optional,player_messages/iti-kathed.txt
+Kartik Khandelwal,Product Council,high,High-engagement,player_messages/kartik-khandelwal.txt
+Kovid Poudel,Engineering Blackbox,high,Core,player_messages/kovid-poudel.txt
+Mammoth,Ops & Ground Truth,unknown,Optional,player_messages/mammoth.txt
+Manasi Chansoria,Ops & Ground Truth,confirm,High-engagement,player_messages/manasi-chansoria.txt
+Mehul Mohan,Startup Investors,medium,Flexible,player_messages/mehul-mohan.txt
+Mohnish Mhatre,Culture & Narrative Lab,medium,Flexible,player_messages/mohnish-mhatre.txt
+Naisargi Kothari,Ops & Ground Truth,medium,Flexible,player_messages/naisargi-kothari.txt
+Neil Daftary,Startup Investors,high,Core,player_messages/neil-daftary.txt
+Padmanabhan Murli,Engineering Blackbox,medium,Flexible,player_messages/padmanabhan-murli.txt
+Pooja Ghatia,Product Council,high,Core,player_messages/pooja-ghatia.txt
+Prachi Verma,Ops & Ground Truth,unknown,Optional,player_messages/prachi-verma.txt
+Pranjal Srivastava,Culture & Narrative Lab,high,High-engagement,player_messages/pranjal-srivastava.txt
+Rahul,Culture & Narrative Lab,medium,Flexible,player_messages/rahul.txt
+Ritvik Hedge,Product Council,high,High-engagement,player_messages/ritvik-hedge.txt
+Sagar Badiyani,Startup Investors,high,Core,player_messages/sagar-badiyani.txt
+Sajag Jain,Ops & Ground Truth,high,Core,player_messages/sajag-jain.txt
+Shaunak,Culture & Narrative Lab,medium,Flexible,player_messages/shaunak.txt
+Shikhar Sharma,Engineering Blackbox,confirm,High-engagement,player_messages/shikhar-sharma.txt
+Shrenik Golecha,Ops & Ground Truth,medium,Flexible,player_messages/shrenik-golecha.txt
+Shubh Khandelwal,Product Council,confirm,High-engagement,player_messages/shubh-khandelwal.txt
+Shubham Jain,Engineering Blackbox,high,Core,player_messages/shubham-jain.txt
+Siddak Bakshi,Startup Investors,high,Core,player_messages/siddak-bakshi.txt
+Srishti Malviya,Culture & Narrative Lab,medium,Flexible,player_messages/srishti-malviya.txt
+Swapnil,Product Council,medium,Flexible,player_messages/swapnil.txt
+Vaibhav Gupta,Engineering Blackbox,high,High-engagement,player_messages/vaibhav-gupta.txt
+Varun Chopra,Product Council,high,High-engagement,player_messages/varun-chopra.txt
+Vrishali,Ops & Ground Truth,medium,Flexible,player_messages/vrishali.txt

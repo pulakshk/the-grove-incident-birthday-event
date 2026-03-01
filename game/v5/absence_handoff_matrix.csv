@@ -1,0 +1,43 @@
+name,team,importance,likely,handoff_to,handoff_packet,primary_artifact
+Aanak Sengupta,Product Council,High-engagement,high,Pooja Ghatia,PKT-AANAK-SENG,inboard-notes-v-edit.pdf
+Abhishek Gosavi,Culture & Narrative Lab,Flexible,medium,Shaunak,PKT-ABHISHEK-G,voice-clone-founder.m4a
+Abhishek Mukharjee,Culture & Narrative Lab,Optional,unknown,Shaunak,PKT-ABHISHEK-M,grove-commentary-gen-v4.txt
+Adarsh,Culture & Narrative Lab,Flexible,medium,Shaunak,PKT-ADARSH,voice-clone-founder.m4a
+Aiswarya Mahajan,Culture & Narrative Lab,High-engagement,high,Shaunak,PKT-AISWARYA-M,grove-commentary-gen-v4.txt
+Akshat,Startup Investors,Flexible,medium,Aniket Chandra,PKT-AKSHAT,side-letter-v2-signed.pdf
+Aniket Chandra,Startup Investors,Core,high,Aniket Chandra,PKT-ANIKET-CHA,treasury-map-Nov.xlsx
+Anubhav Gaba,Engineering Blackbox,Core,medium,Kovid Poudel,PKT-ANUBHAV-GA,prod-deploy-log-7:03.txt
+Ayush Borse,Culture & Narrative Lab,High-engagement,high,Shaunak,PKT-AYUSH-BORS,voice-clone-founder.m4a
+Ayush Mittal,Engineering Blackbox,High-engagement,confirm,Kovid Poudel,PKT-AYUSH-MITT,auth-vuln-P0-jira.pdf
+Bharat Dhir,Ops & Ground Truth,Core,confirm,Manasi Chansoria,PKT-BHARAT-DHI,ab-test-raw-export.csv
+Devashish Rane,Product Council,High-engagement,high,Pooja Ghatia,PKT-DEVASHISH-,cease-desist-draft.pdf
+Gunjan Samtani,Product Council,High-engagement,high,Pooja Ghatia,PKT-GUNJAN-SAM,cease-desist-draft.pdf
+Harsh Bhimrajka,Engineering Blackbox,Core,high,Kovid Poudel,PKT-HARSH-BHIM,auth-vuln-P0-jira.pdf
+Iti Kathed,Ops & Ground Truth,Optional,unknown,Manasi Chansoria,PKT-ITI-KATHED,inboard-notes-v-edit.pdf
+Kartik Khandelwal,Product Council,High-engagement,high,Pooja Ghatia,PKT-KARTIK-KHA,cease-desist-draft.pdf
+Kovid Poudel,Engineering Blackbox,Core,high,Kovid Poudel,PKT-KOVID-POUD,auth-vuln-P0-jira.pdf
+Mammoth,Ops & Ground Truth,Optional,unknown,Manasi Chansoria,PKT-MAMMOTH,ab-test-raw-export.csv
+Manasi Chansoria,Ops & Ground Truth,High-engagement,confirm,Manasi Chansoria,PKT-MANASI-CHA,ab-test-raw-export.csv
+Mehul Mohan,Startup Investors,Flexible,medium,Aniket Chandra,PKT-MEHUL-MOHA,treasury-map-Nov.xlsx
+Mohnish Mhatre,Culture & Narrative Lab,Flexible,medium,Shaunak,PKT-MOHNISH-MH,voice-clone-founder.m4a
+Naisargi Kothari,Ops & Ground Truth,Flexible,medium,Manasi Chansoria,PKT-NAISARGI-K,inboard-notes-v-edit.pdf
+Neil Daftary,Startup Investors,Core,high,Aniket Chandra,PKT-NEIL-DAFTA,side-letter-v2-signed.pdf
+Padmanabhan Murli,Engineering Blackbox,Flexible,medium,Kovid Poudel,PKT-PADMANABHA,auth-vuln-P0-jira.pdf
+Pooja Ghatia,Product Council,Core,high,Pooja Ghatia,PKT-POOJA-GHAT,inboard-notes-v-edit.pdf
+Prachi Verma,Ops & Ground Truth,Optional,unknown,Manasi Chansoria,PKT-PRACHI-VER,inboard-notes-v-edit.pdf
+Pranjal Srivastava,Culture & Narrative Lab,High-engagement,high,Shaunak,PKT-PRANJAL-SR,grove-commentary-gen-v4.txt
+Rahul,Culture & Narrative Lab,Flexible,medium,Shaunak,PKT-RAHUL,grove-commentary-gen-v4.txt
+Ritvik Hedge,Product Council,High-engagement,high,Pooja Ghatia,PKT-RITVIK-HED,inboard-notes-v-edit.pdf
+Sagar Badiyani,Startup Investors,Core,high,Aniket Chandra,PKT-SAGAR-BADI,side-letter-v2-signed.pdf
+Sajag Jain,Ops & Ground Truth,Core,high,Manasi Chansoria,PKT-SAJAG-JAIN,ab-test-raw-export.csv
+Shaunak,Culture & Narrative Lab,Flexible,medium,Shaunak,PKT-SHAUNAK,voice-clone-founder.m4a
+Shikhar Sharma,Engineering Blackbox,High-engagement,confirm,Kovid Poudel,PKT-SHIKHAR-SH,prod-deploy-log-7:03.txt
+Shrenik Golecha,Ops & Ground Truth,Flexible,medium,Manasi Chansoria,PKT-SHRENIK-GO,inboard-notes-v-edit.pdf
+Shubh Khandelwal,Product Council,High-engagement,confirm,Pooja Ghatia,PKT-SHUBH-KHAN,inboard-notes-v-edit.pdf
+Shubham Jain,Engineering Blackbox,Core,high,Kovid Poudel,PKT-SHUBHAM-JA,auth-vuln-P0-jira.pdf
+Siddak Bakshi,Startup Investors,Core,high,Aniket Chandra,PKT-SIDDAK-BAK,side-letter-v2-signed.pdf
+Srishti Malviya,Culture & Narrative Lab,Flexible,medium,Shaunak,PKT-SRISHTI-MA,voice-clone-founder.m4a
+Swapnil,Product Council,Flexible,medium,Pooja Ghatia,PKT-SWAPNIL,inboard-notes-v-edit.pdf
+Vaibhav Gupta,Engineering Blackbox,High-engagement,high,Kovid Poudel,PKT-VAIBHAV-GU,auth-vuln-P0-jira.pdf
+Varun Chopra,Product Council,High-engagement,high,Pooja Ghatia,PKT-VARUN-CHOP,inboard-notes-v-edit.pdf
+Vrishali,Ops & Ground Truth,Flexible,medium,Manasi Chansoria,PKT-VRISHALI,inboard-notes-v-edit.pdf
