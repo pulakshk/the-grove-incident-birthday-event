@@ -47,6 +47,18 @@ const CHARACTER_QUIRKS = [
   "Pretends to know everything about AI, but clearly has no idea."
 ];
 
+const EVIDENCE_CONTEXT = {
+  'prod-deploy-log-7:03.txt': 'CONTEXT: This raw server log proves that the "Version 3" launch was actually a fake shadow deployment rolled back to an older version at exactly 19:03 PM.',
+  'side-letter-v2-signed.pdf': 'CONTEXT: This secret legal agreement shows the Startup Investors demanded fraudulent performance metrics to inflate the company valuation.',
+  'auth-vuln-P0-jira.pdf': 'CONTEXT: This high-severity bug report proves Engineering knew the system was critically broken and vulnerable before launch.',
+  'cease-desist-draft.pdf': 'CONTEXT: This unreleased legal document shows Product Council was preparing to silence anyone who spoke up about the fake launch.',
+  'inboard-notes-v-edit.pdf': 'CONTEXT: These heavily redacted meeting notes show a coordinated cover-up attempt to hide the 19:03 shadow deploy.',
+  'treasury-map-Nov.xlsx': 'CONTEXT: This internal financial spreadsheet reveals massive, unrecorded money transfers happening right as the warnings were ignored.',
+  'voice-clone-founder.m4a': 'CONTEXT: This horrifying audio clip reveals a generated deepfake of the founder, proving Culture & Media were altering reality.',
+  'grove-commentary-gen-v4.txt': 'CONTEXT: This document shows the Culture team was pre-writing PR spin for a disaster they knew was coming.',
+  'ab-test-raw-export.csv': 'CONTEXT: This raw data export proves the metrics fed to the press were completely fabricated.'
+};
+
 function extractWhatsAppDetails() {
   const rawText = fs.readFileSync(WHATSAPP_MESSAGES_FILE, 'utf-8');
   const sections = rawText.split('## ');
@@ -92,6 +104,11 @@ async function generateHTMLPosters() {
         const name = parts[0];
         const data = detailsDict[name] || {};
 
+        let finalClue = data.evidence ? 'You hold the access to: ' + data.evidence : 'No physical evidence provided. Rely on your testimony.';
+        if (data.evidence && EVIDENCE_CONTEXT[data.evidence]) {
+          finalClue += '\n\n' + EVIDENCE_CONTEXT[data.evidence];
+        }
+
         guests.push({
           name: name,
           team: parts[1],
@@ -99,7 +116,7 @@ async function generateHTMLPosters() {
           mission: data.mission || parts[4],
           quirk: CHARACTER_QUIRKS[Math.floor(Math.random() * CHARACTER_QUIRKS.length)],
           profile: data.profile || 'Standard employee profile.',
-          clue: data.evidence ? 'You hold the access to: ' + data.evidence : 'No physical evidence provided. Rely on your testimony.'
+          clue: finalClue
         });
       }
     }
@@ -114,7 +131,7 @@ async function generateHTMLPosters() {
       mission: 'Convince two strangers that Mehul is completely innocent before Round 2.',
       quirk: 'Defends Mehul aggressively, even when no one is attacking him.',
       profile: 'Partner to the Tech founder. Trusts him completely minus one small detail.',
-      clue: 'Clue: "I saw Mehul checking his phone nervously at 19:03 PM. What happened at 19:03?"'
+      clue: 'Clue: "I saw Mehul checking his phone nervously at 19:03 PM. What happened at 19:03?"\n\nCONTEXT: This testimony proves that someone in the Investor team was aware of unfolding events right as the shadow deploy occurred.'
     });
   }
 
@@ -127,7 +144,7 @@ async function generateHTMLPosters() {
       mission: 'Defend Shubham\'s data models to everyone you meet. Prove his spreadsheets were pristine.',
       quirk: 'Gasps dramatically whenever someone mentions a database crash.',
       profile: 'Partner to Shubham Jain. Knows exactly how many hours he spent building the performance model.',
-      clue: 'Clue: "Shubham told me his model was perfect, but Product forced him to change the outputs for the investors."'
+      clue: 'Clue: "Shubham told me his model was perfect, but Product forced him to change the outputs for the investors."\n\nCONTEXT: This proves that the Engineering team was pressured into falsifying data by the Product Council.'
     });
   }
 
@@ -140,7 +157,7 @@ async function generateHTMLPosters() {
       mission: 'Ask someone for sign-off on a document that doesn\'t exist. Look extremely panicked.',
       quirk: 'Constantly mentions how you need this internship for your college credits.',
       profile: 'An intern who was locked in a closet during the launch party by accident.',
-      clue: 'Clue: "I found a shredded paper near the printer at 8:30 PM. It had the word \'Liability\' circled in red ink."'
+      clue: 'Clue: "I found a shredded paper near the printer at 8:30 PM. It had the word \'Liability\' circled in red ink."\n\nCONTEXT: This proves that someone was deliberately destroying evidence during "The Silent Hour" when the Founder was dying.'
     });
   }
 
@@ -153,7 +170,7 @@ async function generateHTMLPosters() {
       mission: 'Check everyone\'s phone to ensure they don\'t have the company malware.',
       quirk: 'Asks everyone if they have tried turning it off and on again before listening to them.',
       profile: 'The guy who actually set up the WiFi at the party. Hates the engineering team.',
-      clue: 'Clue: "The server logs show a massive data wipe was initiated from the VIP room at exactly 8:15 PM."'
+      clue: 'Clue: "The server logs show a massive data wipe was initiated from the VIP room at exactly 8:15 PM."\n\nCONTEXT: This timeline proves that an executive triggered the data wipe right as the founder began his own independent investigation.'
     });
   }
 
