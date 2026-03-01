@@ -12,7 +12,7 @@
 - Manasi Chansoria (High-engagement)
 - Naisargi Kothari (Flexible)
 - Prachi Verma (Optional)
-- Sajag Jain (Core)
+- Shrenik Jain (Core)
 - Shrenik Golecha (Flexible)
 - Vrishali (Flexible)
 

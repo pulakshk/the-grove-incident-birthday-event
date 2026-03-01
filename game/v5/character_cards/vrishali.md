@@ -17,7 +17,7 @@ Subplot:
 Cross-floor subplot: verify one claim from Product Council and return with witness name.
 
 Primary Artifact: inboard-notes-v-edit.pdf
-Implicates: Sajag, Bharat, Pooja
+Implicates: Shrenik, Bharat, Pooja
 
 If Absent:
 Packet PKT-VRISHALI goes to Manasi Chansoria.

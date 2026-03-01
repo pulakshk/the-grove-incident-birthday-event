@@ -17,7 +17,7 @@ Subplot:
 Cross-floor subplot: verify one claim from Product Council and return with witness name.
 
 Primary Artifact: ab-test-raw-export.csv
-Implicates: Sajag, Bharat, Pooja
+Implicates: Shrenik, Bharat, Pooja
 
 If Absent:
 Packet PKT-MANASI-CHA goes to Manasi Chansoria.

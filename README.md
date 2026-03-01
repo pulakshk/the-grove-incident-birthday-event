@@ -2,7 +2,7 @@
 
 | Artifact | Contains | Implicates | Revealed |
 |---|---|---|---|
-| inboard-notes-v-edit.pdf | Edited vs original board notes | V, Sajag, Bharat | Round 1 |
+| inboard-notes-v-edit.pdf | Edited vs original board notes | V, Shrenik, Bharat | Round 1 |
 | grove-commentary-gen-v4.txt | Prompt system for narrative smoothing | Shaunak, Rahul | Round 2 |
 | treasury-map-Nov.xlsx | Wallet moves and off-chain transfers | Siddak, Aniket, Neil, Sagar | Round 2 |
 | voice-clone-founder.mp3 | Synthetic memo (AAC payload). Prefer .m4a for playback | Neil (author), V (voice clone) | Twist 2 (8:45 PM) |

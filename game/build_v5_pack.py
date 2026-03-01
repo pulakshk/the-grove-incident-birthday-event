@@ -21,7 +21,7 @@ V5_DIR = GAME_ROOT / 'v5'
 VAULT_DIR = ROOT / 'vault' / 'dead-drop-27'
 ZIP_PATH = ROOT / 'vault' / 'dead-drop-27.zip'
 
-NO_SHOW = {'Naren Kashyap', 'Aishwarya Manjunath', 'Sarthak Dwivedi'}
+NO_SHOW = {'Naren Kashyap', 'Aishwarya Manjunath', 'Sarthak Dwivedi', 'Sajag Jain', 'Padmanabhan Murli', 'Srishti Malviya', 'Prachi Verma', 'Abhishek Mukharjee', 'Abhishek Gosavi'}
 
 TEAM_CONFIG = {
     'Startup Investors': {
@@ -71,7 +71,7 @@ CORE_NAMES = {
     'Aniket Chandra',
     'Siddak Bakshi',
     'Neil Daftary',
-    'Sajag Jain',
+    'Shrenik Golecha',
     'Bharat Dhir',
     'Harsh Bhimrajka',
     'Shubham Jain',
@@ -136,7 +136,7 @@ CONSPIRACY_CHAIN = [
     'Aniket and Siddak kept treasury moves active through a side-letter loophole.',
     'Shubham and Shubh maintained separate internal vs investor performance narratives.',
     'Pooja drafted legal suppression and delayed escalation in the critical window.',
-    'Sajag preserved the board-note diff proving narrative edits after the incident.',
+    'Shrenik preserved the board-note diff proving narrative edits after the incident.',
     'Bharat found V at 9:14 PM, confirming the delay that changed the outcome.',
     'Neil and Sagar assembled and stress-tested the dead-drop to force admissions one year later.',
 ]
@@ -360,7 +360,7 @@ def implicates_for(guest: Guest, team: str) -> str:
     if team == 'Product Council':
         return 'Pooja, Shubh, Shubham'
     if team == 'Ops & Ground Truth':
-        return 'Sajag, Bharat, Pooja'
+        return 'Shrenik, Bharat, Pooja'
     return 'Neil, Shaunak, Rahul'
 
 
