@@ -15,8 +15,9 @@ But behind closed doors, the reality was a nightmare. The timeline you were sold
 Here is what actually happened on launch day:
 *   First, internal memos show someone flagged a critical system flaw, but leadership ignored the warning and pushed ahead.
 *   Then, at exactly 19:03 PM, server logs show a massive and unauthorized "shadow deployment." Lines of code were completely overwritten. The performance metrics sent to the Startup Investors were entirely faked.
-*   For the next hour, total panic gripped the executive floor. Drafts of legal suppression documents were written. 
-*   And finally, at 21:14 PM... 'V'—the visionary founder—was discovered dead.
+*   At 20:15 PM, someone manually locked the heavy magnetic doors to Server Room 4, trapping founder 'V' inside to silence his protests.
+*   At 21:03 PM, a full system power-cycle was initiated to try and force the broken code to run. This catastrophic mistake shut down the emergency oxygen scrubbers in Room 4.
+*   And finally, at 21:14 PM... 'V' was discovered dead. The cause? Hypoxia and heatstroke in 114-degree ambient heat.
 
 The launch went ahead anyway. The incident was completely buried. An ecosystem of lies was built over the ashes, and everyone in the building that night was sworn to secrecy.
 

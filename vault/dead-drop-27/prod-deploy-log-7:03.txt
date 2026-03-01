@@ -9,6 +9,7 @@
 [20:15:00] system=security action=door_lock zone=SR-4 user=iti.k witness=shaunak reason="Manual Override"
 [20:58:09] user=v.vora action=manual_patch_attempt module=auth_gate [FAILED: ACCESS REVOKED]
 [21:00:00] user=shikhar.s action=keycard_revoke target=v.vora authorize=ayush.m status=success
+[21:03:00] user=vihan action=safety_lock_engage target=zone-4 reason=protocol_override
 [21:03:46] user=naisargi.k action=power_cycle_global target=all_zones authorize=pooja.g
 [21:03:50] system=life_support action=cutoff zone=SR-4 reason=power_cycle_logic
 [21:14:00] user=bharat.d action=emergency_access zone=SR-4 status=body_found witness=pooja.g
