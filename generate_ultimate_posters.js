@@ -75,6 +75,15 @@ const PERSONAL_MEMORIES = {
   'Prachi Verma': 'PERSONAL MEMORY: You were manning the security desk. You watched V walk into Server Room 4 on the cameras at 20:15 PM and said nothing.'
 };
 
+const DEFAULT_MEMORIES_BY_TEAM = {
+  'Startup Investors': 'PERSONAL MEMORY: You were on the 18:00 call where they admitted the metrics were shaky. You told them to fix it or the funding would be pulled.',
+  'Product Council': 'PERSONAL MEMORY: You saw the unpatched bug list at 18:30 PM. You decided it wasn\'t a blocker and hid the JIRA tickets from the executives.',
+  'Engineering Blackbox': 'PERSONAL MEMORY: You were in the core Slack channel when the 19:03 deploy was ordered. You copy-pasted the fake code blocks yourself because you were afraid of being fired.',
+  'Ops & Ground Truth': 'PERSONAL MEMORY: You saw V running furiously down the hall towards Server Room 4 at 20:14 PM. You didn\'t stop him, even though you knew the cooling was offline.',
+  'Culture & Narrative Lab': 'PERSONAL MEMORY: You were told at 19:30 PM that the launch was a total failure. You spent the next hour drafting tweets about how it was a \'"record-breaking success"\' to distract the press.',
+  'Culture & Narrative/Media': 'PERSONAL MEMORY: You were told at 19:30 PM that the launch was a total failure. You spent the next hour drafting tweets about how it was a \'"record-breaking success"\' to distract the press.'
+};
+
 function extractWhatsAppDetails() {
   const rawText = fs.readFileSync(WHATSAPP_MESSAGES_FILE, 'utf-8');
   const sections = rawText.split('## ');
@@ -124,9 +133,8 @@ async function generateHTMLPosters() {
         if (data.evidence && EVIDENCE_CONTEXT[data.evidence]) {
           finalClue += '\n\n' + EVIDENCE_CONTEXT[data.evidence];
         }
-        if (PERSONAL_MEMORIES[name]) {
-          finalClue += '\n\n' + PERSONAL_MEMORIES[name];
-        }
+
+        let guestMemory = PERSONAL_MEMORIES[name] || DEFAULT_MEMORIES_BY_TEAM[parts[1]] || "PERSONAL MEMORY: You were present in the building when V died, but you chose to stay completely silent.";
 
         guests.push({
           name: name,
@@ -135,7 +143,8 @@ async function generateHTMLPosters() {
           mission: data.mission || parts[4],
           quirk: CHARACTER_QUIRKS[Math.floor(Math.random() * CHARACTER_QUIRKS.length)],
           profile: data.profile || 'Standard employee profile.',
-          clue: finalClue
+          clue: finalClue,
+          memory: guestMemory
         });
       }
     }
@@ -150,7 +159,8 @@ async function generateHTMLPosters() {
       mission: 'Convince two strangers that Mehul is completely innocent before Round 2.',
       quirk: 'Defends Mehul aggressively, even when no one is attacking him.',
       profile: 'Partner to the Tech founder. Trusts him completely minus one small detail.',
-      clue: 'Clue: "I saw Mehul checking his phone nervously at 19:03 PM. What happened at 19:03?"\n\nCONTEXT: This testimony proves that someone in the Investor team was aware of unfolding events right as the shadow deploy occurred.'
+      clue: 'Clue: "I saw Mehul checking his phone nervously at 19:03 PM. What happened at 19:03?"\n\nCONTEXT: This testimony proves that someone in the Investor team was aware of unfolding events right as the shadow deploy occurred.',
+      memory: 'PERSONAL MEMORY: You saw Mehul manually delete a furious message thread from the Product Council right after V died. You know he is directly involved.'
     });
   }
 
@@ -163,7 +173,8 @@ async function generateHTMLPosters() {
       mission: 'Defend Shubham\'s data models to everyone you meet. Prove his spreadsheets were pristine.',
       quirk: 'Gasps dramatically whenever someone mentions a database crash.',
       profile: 'Partner to Shubham Jain. Knows exactly how many hours he spent building the performance model.',
-      clue: 'Clue: "Shubham told me his model was perfect, but Product forced him to change the outputs for the investors."\n\nCONTEXT: This proves that the Engineering team was pressured into falsifying data by the Product Council.'
+      clue: 'Clue: "Shubham told me his model was perfect, but Product forced him to change the outputs for the investors."\n\nCONTEXT: This proves that the Engineering team was pressured into falsifying data by the Product Council.',
+      memory: 'PERSONAL MEMORY: You walked onto the engineering floor at 19:03 PM and saw Shubham physically unplugging a warning siren when the metrics spiked. He lied to you about what he was doing.'
     });
   }
 
@@ -176,7 +187,8 @@ async function generateHTMLPosters() {
       mission: 'Ask someone for sign-off on a document that doesn\'t exist. Look extremely panicked.',
       quirk: 'Constantly mentions how you need this internship for your college credits.',
       profile: 'An intern who was locked in a closet during the launch party by accident.',
-      clue: 'Clue: "I found a shredded paper near the printer at 8:30 PM. It had the word \'Liability\' circled in red ink."\n\nCONTEXT: This proves that someone was deliberately destroying evidence during "The Silent Hour" when the Founder was dying.'
+      clue: 'Clue: "I found a shredded paper near the printer at 8:30 PM. It had the word \'Liability\' circled in red ink."\n\nCONTEXT: This proves that someone was deliberately destroying evidence during "The Silent Hour" when the Founder was dying.',
+      memory: 'PERSONAL MEMORY: You were hiding under a desk when Operations dragged V\'s body out of Server Room 4. You saw them wipe down the door handle.'
     });
   }
 
@@ -189,7 +201,8 @@ async function generateHTMLPosters() {
       mission: 'Check everyone\'s phone to ensure they don\'t have the company malware.',
       quirk: 'Asks everyone if they have tried turning it off and on again before listening to them.',
       profile: 'The guy who actually set up the WiFi at the party. Hates the engineering team.',
-      clue: 'Clue: "The server logs show a massive data wipe was initiated from the VIP room at exactly 8:15 PM."\n\nCONTEXT: This timeline proves that an executive triggered the data wipe right as the founder began his own independent investigation.'
+      clue: 'Clue: "The server logs show a massive data wipe was initiated from the VIP room at exactly 8:15 PM."\n\nCONTEXT: This timeline proves that an executive triggered the data wipe right as the founder began his own independent investigation.',
+      memory: 'PERSONAL MEMORY: You bypassed the VIP room firewall at 8:15 PM on the orders of the Product Council. You gave them the backdoor access they used to trigger the data wipe.'
     });
   }
 
@@ -228,7 +241,8 @@ async function generateHTMLPosters() {
     clueDatabase[hashedCode] = {
       name: Buffer.from(guest.name).toString('base64'),
       team: Buffer.from(guest.team).toString('base64'),
-      clueText: Buffer.from(guest.clue).toString('base64')
+      clueText: Buffer.from(guest.clue).toString('base64'),
+      memoryText: Buffer.from(guest.memory || 'Memory Wiped').toString('base64')
     };
 
     // Check which team possesses the artifact they need to ask.

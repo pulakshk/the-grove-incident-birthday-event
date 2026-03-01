@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Grove Incident: Personal Memory Archive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="clues_database.js"></script>
+    <style>
+        :root {
+            --bg: #0A0A09;
+            --surface: #141311;
+            --prim: #9E9E9E;
+            /* Grayscale memory theme */
+            --text-main: #EFEBE1;
+            --text-muted: #A39B8A;
+            --alert: #D9534F;
+            --success: #C9A84C;
+            /* Gold for memory */
+            --gold: #C9A84C;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Space Mono', monospace;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .terminal-container {
+            width: 100%;
+            max-width: 600px;
+            padding: 40px;
+            background: var(--surface);
+            border: 2px solid #333;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(201, 168, 76, 0.1);
+            /* Gold glow */
+        }
+
+        h1 {
+            color: var(--gold);
+            letter-spacing: 2px;
+            font-size: 24px;
+            text-transform: uppercase;
+            border-bottom: 2px dashed #333;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .header-info {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        label {
+            color: var(--gold);
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        input {
+            background: #000;
+            border: 1px solid #444;
+            color: var(--text-main);
+            padding: 15px;
+            font-family: 'Space Mono', monospace;
+            font-size: 24px;
+            text-align: center;
+            letter-spacing: 5px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 10px rgba(201, 168, 76, 0.3);
+        }
+
+        button {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            padding: 15px;
+            font-family: 'Space Mono', monospace;
+            font-size: 18px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: var(--gold);
+            color: #000;
+        }
+
+        .error {
+            color: var(--alert);
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+            min-height: 20px;
+        }
+
+        .result-section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .clue-reveal {
+            background: rgba(201, 168, 76, 0.05);
+            border: 2px solid var(--gold);
+            padding: 30px;
+            text-align: center;
+            font-size: 20px;
+            line-height: 1.6;
+            color: #fff;
+            font-style: italic;
+            /* Emphasize memory format */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .typing {
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 2px;
+            animation: typing 2s steps(40, end);
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        .nav-back {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .nav-back:hover {
+            color: var(--gold);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="terminal-container">
+        <h1 class="typing">PERSONAL MEMORY ARCHIVE</h1>
+        <div class="header-info">
+            NEURAL RECOVERY ESTABLISHED.<br>
+            AWAITING AUTHORIZATION CODE.
+        </div>
+
+        <!-- Step 1: Login -->
+        <div id="login-step" class="input-group">
+            <label>ENTER 5-DIGIT ACCESS CODE</label>
+            <input type="text" id="access-code" maxlength="5" autocomplete="off" placeholder="XXXXX">
+            <button onclick="verifyCode()">Recall Memory</button>
+            <div id="login-error" class="error"></div>
+        </div>
+
+        <!-- Step 2: Memory Reveal -->
+        <div id="result-step" class="result-section">
+            <div style="color: var(--gold); text-align: center; margin-bottom: 20px; letter-spacing: 2px;">
+                > IDENTITY CONFIRMED: <span id="player-name"></span>
+            </div>
+            <h2 style="color: var(--gold); text-align: center; margin-bottom: 30px;">MEMORY RECOVERED</h2>
+            <div class="clue-reveal" id="memory-text">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+
+        <a href="index.html" class="nav-back">
+            < RETURN TO MAIN ARCHIVE</a>
+    </div>
+
+    <script>
+        async function hashString(message) {
+            const msgBuffer = new TextEncoder().encode(message);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        async function verifyCode() {
+            const code = document.getElementById('access-code').value.trim();
+            const errorDiv = document.getElementById('login-error');
+
+            if (typeof CLUE_DB === 'undefined') {
+                errorDiv.innerHTML = "SYSTEM ERROR: Database offline. Try again later.";
+                return;
+            }
+
+            const hashedInput = await hashString(code);
+
+            if (CLUE_DB[hashedInput]) {
+                const playerName = atob(CLUE_DB[hashedInput].name);
+                let memoryText = "MEMORY CORRUPTED.";
+
+                if (CLUE_DB[hashedInput].memoryText) {
+                    memoryText = atob(CLUE_DB[hashedInput].memoryText);
+                }
+
+                errorDiv.innerHTML = "";
+                document.getElementById('login-step').style.display = 'none';
+                document.getElementById('result-step').style.display = 'block';
+
+                document.getElementById('player-name').innerText = playerName.toUpperCase();
+                document.getElementById('memory-text').innerText = memoryText;
+
+            } else {
+                errorDiv.innerHTML = "ACCESS DENIED: INVALID CODE.";
+            }
+        }
+
+        // Anti-Cheat: Disable Right Click, F12, and DevTools
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function (e) {
+            if (e.keyCode == 123) { return false; } // F12
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) { return false; } // Ctrl+Shift+I
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) { return false; } // Ctrl+Shift+C
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) { return false; } // Ctrl+Shift+J
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { return false; } // Ctrl+U
+        }
+    </script>
+
+</body>
+
+</html>
