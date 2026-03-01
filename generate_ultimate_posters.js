@@ -92,6 +92,8 @@ const PERSONAL_MEMORIES = {
   // NARRATIVE CONTROL & MEDIA MASKING
   'Rahul': "PERSONAL MEMORY: At 19:15 PM, you were told the metrics were entirely fake. You wrote the press release celebrating the 'record-breaking launch' anyway. You saw the shadows moving toward SR-4 and you turned your back to write more copy.",
   'Aiswarya Mahajan': "PERSONAL MEMORY: You were told at 19:30 PM that the launch was a total failure. You spent the next hour drafting fake testimonials to drown out the negative press. You saw the paramedics arrive at 21:30 PM and you kept typing.",
+  'Sarthak': "PERSONAL MEMORY: You were the one who authorized the 'Emergency Liquidity' transfer at 18:45 PM. You saw V's desperate Slack message asking to stop the launch, but you muted the notification to focus on the Series B term sheet.",
+  'Vihan': "PERSONAL MEMORY: You were in the server room basement when the power-cycle hit at 21:03. You heard the cooling systems groan and fail. You saw the 'Zone 4 Lock' engage on the master board and you didn't override it because you were told it was a 'Security protocol'.",
   'Abhishek Mukharjee': "PERSONAL MEMORY: You spent the night running the 'Sentiment Engine'—an AI script that generated thousands of fake positive tweets to bury the news of the hardware failure in SR-4.",
   'Pranjal Srivastava': "PERSONAL MEMORY: You were tasked with editing the live-stream footage of the launch to remove the frames where the server-rack cooling fans were visibly sparking at 19:10 PM.",
 
@@ -176,7 +178,9 @@ const ORIGINAL_CODES = {
   "Shikhar Sharma": "90111",
   "Ayush Mittal": "92970",
   "Surabhi Solanki": "94326",
-  "Pooja Ghatia": "98180"
+  "Pooja Ghatia": "98180",
+  "Sarthak": "11111",
+  "Vihan": "22222"
 };
 
 const DEFAULT_MEMORIES_BY_TEAM = {
@@ -334,6 +338,34 @@ async function generateHTMLPosters() {
   const browser = await puppeteer.launch({ headless: true });
 
   const clueDatabase = {};
+
+  // Inject Sarthak
+  if (!guests.some(g => g.name === 'Sarthak')) {
+    guests.push({
+      name: 'Sarthak',
+      team: 'Startup Investors',
+      role: 'Emergency Fund Liquidity Mgr',
+      mission: 'Ensure no one finds out about the 18:45 emergency transfer.',
+      quirk: 'Fidgets with a set of car keys while talking about money.',
+      profile: 'High-level finance manager. Values numbers over people.',
+      clue: 'Clue: "I moved some funds around at 18:45, but it was just for internal rebalancing. Nothing to do with the launch."\n\nCONTEXT: This transfer was actually the payout for the media silence.',
+      memory: PERSONAL_MEMORIES['Sarthak']
+    });
+  }
+
+  // Inject Vihan
+  if (!guests.some(g => g.name === 'Vihan')) {
+    guests.push({
+      name: 'Vihan',
+      team: 'Engineering Blackbox',
+      role: 'Remote Logic Switcher',
+      mission: 'Convince Engineering that the power-cycle was inevitable.',
+      quirk: 'Speaks in very short, clipped sentences.',
+      profile: 'Systems engineer. Believes in protocols above all else.',
+      clue: 'Clue: "I saw the lock engage at 21:03 on the master board. I assumed it was an automated safety feature. I didn\'t know V was inside."\n\nCONTEXT: This lock was actually the result of the keycard revocation by Shikhar and Ayush.',
+      memory: PERSONAL_MEMORIES['Vihan']
+    });
+  }
 
   for (const guest of guests) {
     if (['Sajag Jain', 'Srishti Malviya', 'Padmanabhan Murli', 'Prachi Verma', 'Abhishek Mukharjee', 'Abhishek Gosavi'].includes(guest.name)) {

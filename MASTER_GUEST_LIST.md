@@ -32,6 +32,7 @@
 | Rahul | Culture & Narrative Lab | **75322** | grove-commentary-gen-v4.txt |
 | Ritvik Hedge | Product Council | **31678** | inboard-notes-v-edit.pdf |
 | Sagar Badiyani | Startup Investors | **33633** | side-letter-v2-signed.pdf |
+| Sarthak | Startup Investors | **11111** | treasury-map-Nov.xlsx |
 | Sajag Jain | Ops & Ground Truth | **33717** | ab-test-raw-export.csv |
 | Shaunak | Culture & Narrative Lab | **72497** | voice-clone-founder.m4a |
 | Shikhar Sharma | Engineering Blackbox | **90111** | prod-deploy-log-7:03.txt |
@@ -45,6 +46,7 @@
 | The IT Support | Various | **85908** | Context Clue |
 | The Midnight Intern | Various | **55131** | Context Clue |
 | Vaibhav Gupta | Engineering Blackbox | **48090** | auth-vuln-P0-jira.pdf |
+| Vihan | Engineering Blackbox | **22222** | prod-deploy-log-7:03.txt |
 | Varun Chopra | Product Council | **34091** | inboard-notes-v-edit.pdf |
 | Vishnupriya | Various | **58497** | Context Clue |
 | Vrishali | Ops & Ground Truth | **32306** | inboard-notes-v-edit.pdf |
