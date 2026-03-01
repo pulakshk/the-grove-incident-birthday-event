@@ -287,7 +287,14 @@
             }
         };
 
-        function verifyCode() {
+        async function hashString(message) {
+            const msgBuffer = new TextEncoder().encode(message);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        async function verifyCode() {
             const code = document.getElementById('access-code').value.trim();
             const errorDiv = document.getElementById('login-error');
 
@@ -296,9 +303,15 @@
                 return;
             }
 
-            if (CLUE_DB[code]) {
+            const hashedInput = await hashString(code);
+
+            if (CLUE_DB[hashedInput]) {
                 currentPlayerCode = code;
-                currentPlayerInfo = CLUE_DB[code];
+                currentPlayerInfo = {
+                    name: atob(CLUE_DB[hashedInput].name),
+                    team: atob(CLUE_DB[hashedInput].team),
+                    clueText: atob(CLUE_DB[hashedInput].clueText)
+                };
 
                 errorDiv.innerHTML = "";
                 document.getElementById('login-step').style.display = 'none';
@@ -312,7 +325,7 @@
                 requiredAnswer = puzzle.a.toLowerCase();
 
             } else {
-                errorDiv.innerHTML = "ACCESS DENIED: INVALD CODE.";
+                errorDiv.innerHTML = "ACCESS DENIED: INVALID CODE.";
             }
         }
 
@@ -364,6 +377,15 @@
                     document.body.removeChild(audioA);
                 }, 800); // Short delay to prevent browsers from blocking multiple downloads
             }
+        }
+        // Anti-Cheat: Disable Right Click, F12, and DevTools
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function (e) {
+            if (e.keyCode == 123) { return false; } // F12
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) { return false; } // Ctrl+Shift+I
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) { return false; } // Ctrl+Shift+C
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) { return false; } // Ctrl+Shift+J
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { return false; } // Ctrl+U
         }
     </script>
 

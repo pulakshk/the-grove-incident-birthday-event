@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const RUNDOWN_FILE = path.join(__dirname, 'game', 'v5', 'final_rundown.md');
 const WHATSAPP_MESSAGES_FILE = path.join(__dirname, 'game', 'v5', 'whatsapp_pack', 'all_player_messages.md');
@@ -185,12 +186,13 @@ async function generateHTMLPosters() {
 
     // Generate a random 5-digit code
     const accessCode = Math.floor(10000 + Math.random() * 90000).toString();
+    const hashedCode = crypto.createHash('sha256').update(accessCode).digest('hex');
 
     // Save to DB
-    clueDatabase[accessCode] = {
-      name: guest.name,
-      team: guest.team,
-      clueText: guest.clue
+    clueDatabase[hashedCode] = {
+      name: Buffer.from(guest.name).toString('base64'),
+      team: Buffer.from(guest.team).toString('base64'),
+      clueText: Buffer.from(guest.clue).toString('base64')
     };
 
     // Check which team possesses the artifact they need to ask.
