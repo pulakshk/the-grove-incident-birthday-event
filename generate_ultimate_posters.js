@@ -304,7 +304,7 @@ async function generateHTMLPosters() {
       mission: 'Ensure no one finds out about the 18:45 emergency transfer.',
       quirk: 'Fidgets with a set of car keys while talking about money.',
       profile: 'High-level finance manager. Values numbers over people.',
-      clue: 'Clue: "I moved some funds around at 18:45, but it was just for internal rebalancing. Nothing to do with the launch."\n\nCONTEXT: This transfer was actually the payout for the media silence.',
+      clue: 'Clue: "I moved some funds around at 18:45, but it was just for internal rebalancing. Nothing to do with the launch. [treasury-map-Nov.xlsx]"\n\nCONTEXT: This transfer was actually the payout for the media silence.',
       memory: PERSONAL_MEMORIES['Sarthak']
     });
   }
@@ -318,7 +318,7 @@ async function generateHTMLPosters() {
       mission: 'Convince Engineering that the power-cycle was inevitable.',
       quirk: 'Speaks in very short, clipped sentences.',
       profile: 'Systems engineer. Believes in protocols above all else.',
-      clue: 'Clue: "I saw the lock engage at 21:03 on the master board. I assumed it was an automated safety feature. I didn\'t know V was inside."\n\nCONTEXT: This lock was actually the result of the keycard revocation by Shikhar and Ayush.',
+      clue: 'Clue: "I saw the lock engage at 21:03 on the master board. I assumed it was an automated safety feature. I didn\'t know V was inside. [prod-deploy-log-7:03.txt]"\n\nCONTEXT: This lock was actually the result of the keycard revocation by Shikhar and Ayush.',
       memory: PERSONAL_MEMORIES['Vihan']
     });
   }
@@ -346,7 +346,7 @@ async function generateHTMLPosters() {
       mission: 'Check everyone\'s phone to ensure they don\'t have malware.',
       quirk: 'Fixes people\'s laptop screens without being asked.',
       profile: 'The only person who actually knows how to read the raw logs.',
-      clue: 'Clue: "The server logs show a massive data wipe initiated from the VIP room at exactly 8:15 PM."\n\nCONTEXT: This wipe was the first attempt to hide the shadow deploy.',
+      clue: 'Clue: "The server logs show a massive data wipe initiated from the VIP room at exactly 8:15 PM. [prod-deploy-log-7:03.txt]"\n\nCONTEXT: This wipe was the first attempt to hide the shadow deploy.',
       memory: 'You saw Kovid Poudel sweating profusely at his desk at 21:05 PM.'
     });
   }
