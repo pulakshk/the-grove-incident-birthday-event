@@ -21,18 +21,18 @@ Here is the undeniable truth of how V died.
 **[VISUAL: Timestamp flashes on screen: 18:45 PM]**
 
 **NARRATOR:**
-It started with the Product Council. Aanak, Devashish, Gunjan, and the rest of the roadmap team had forced an impossible deadline. They knew the product wasn't ready. 
+It started with the Product Council. Aanak, Devashish, Gunjan, Kartik, Pooja, Ritvik, Shubh, Swapnil, and Varun had forced an impossible deadline. They knew the product wasn't ready. 
 
-At 18:45 PM, the Operations & Ground Truth team—led by floor marshals like Bharat, Sajag, and Manasi—noted severe structural instability in the physical server room holding the new 'Version 3' architecture. 
+At 18:45 PM, the Operations & Ground Truth team—led by floor marshals like Bharat, Iti, Mammoth, Manasi, Naisargi, Prachi, Sajag, Shrenik, and Vrishali—noted severe structural instability in the physical server room holding the new 'Version 3' architecture. 
 
-Simultaneously, the Engineering Blackbox, including Anubhav, Kovid, and Shubham Jain, detected a massive, unpatchable memory leak in the core algorithm. The launch was destined to fail catastrophically. The warnings were sent.
+Simultaneously, the Engineering Blackbox, including Anubhav, Ayush Mittal, Harsh, Kovid, Padmanabhan, Shikhar, Shubham, and Vaibhav, detected a massive, unpatchable memory leak in the core algorithm. The launch was destined to fail catastrophically. The warnings were sent.
 
 **[VISUAL: Timestamp flashes on screen: 18:55 PM]**
 
 **NARRATOR:**
 But the warnings were ignored. 
 
-Instead of halting the launch, the Startup Investors—heavy hitters like Siddak, Mehul, Aniket, and Neil—panicked. They had side-letters. They had liquidity demands. They realized that a delayed launch would destroy the company's valuation before they could cash out. 
+Instead of halting the launch, the Startup Investors—heavy hitters like Akshat, Aniket, Mehul, Neil, Sagar, and Siddak—panicked. They had side-letters. They had liquidity demands. They realized that a delayed launch would destroy the company's valuation before they could cash out. 
 
 The Investors pressured the Product Council, and together, they ordered Engineering to execute a "Shadow Deploy." They forced the engineers, despite their protests, to push an older, stable—but entirely fake—version of the code, disguised as 'Version 3'. 
 
@@ -41,7 +41,7 @@ The Investors pressured the Product Council, and together, they ordered Engineer
 **NARRATOR:**
 At exactly 19:03 PM, the Shadow Deploy went live. The metrics spiked instantly. The launch looked like a massive success. The investors got their valuation.
 
-Behind the scenes, the Culture and Media Lab—Story Ops like Pranjal, Aiswarya, and both Abhisheks—immediately went to work spinning a fabricated narrative. They built a PR shield, selling the fake success to the press and actively burying the warnings from the floor. 
+Behind the scenes, the Culture and Media Lab—Story Ops like Abhishek Gosavi, Abhishek Mukharjee, Adarsh, Aiswarya, Ayush Borse, Mohnish, Pranjal, Rahul, Shaunak, and Srishti—immediately went to work spinning a fabricated narrative. They built a PR shield, selling the fake success to the press and actively burying the warnings from the floor. 
 
 **[VISUAL: Timestamp flashes on screen: 20:15 PM]**
 
@@ -62,6 +62,8 @@ But who stopped him?
 It was the Operations Team—the ones who control the building. They deactivated his keycard. They trapped V inside Server Room 4 to prevent him from reaching the press. 
 
 And it was the Engineering Team—terrified of taking the fall for the fake code—who remotely triggered a total server purge to hide their own tracks. That massive data wipe overloaded the cooling systems in Room 4, sucking the oxygen out of the room. 
+
+Even the unexpected guests—Vishnupriya, Surabhi, the IT Support, the Midnight Intern—witnessed the chaos, and chose to stay silent.
 
 **[VISUAL: The screen cuts to black]**
 
