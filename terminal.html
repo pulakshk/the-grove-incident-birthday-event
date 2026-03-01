@@ -298,7 +298,7 @@
             const ans = document.getElementById('puzzle-answer').value.trim().toLowerCase();
             const errorDiv = document.getElementById('puzzle-error');
 
-            if (ans === requiredAnswer || ans === 'c') { // accepting both 'c' and 'C'
+            if (ans === requiredAnswer) {
                 errorDiv.innerHTML = "";
                 document.getElementById('puzzle-step').style.display = 'none';
                 document.getElementById('result-step').style.display = 'block';

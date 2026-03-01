@@ -1,0 +1,47 @@
+# THE GROVE INCIDENT: BACKGROUND LORE SCRIPT
+## Instructions for NotebookLM / Video Generator
+Synthesize the following text as a dramatic, true-crime documentary style introduction or an urgent hacker manifesto. This video should be sent to players BEFORE the party to set the tone.
+
+---
+
+**[SCENE START]**
+
+**[VISUAL: Glitching server code, security camera footage, dark atmospheric lighting]**
+**[AUDIO: Deep synth bass, static, typing sounds]**
+
+**NARRATOR (Distorted, Urgent):**
+Exactly one year ago, on March 1st, the tech world watched as 'The Grove' prepared for its massive, highly-anticipated Version 3 launch.
+
+It was supposed to be a triumph. A unicorn valuation. A flawless victory. 
+
+But behind closed doors, the reality was a nightmare.
+
+At exactly 7:03 PM, the server logs show a massive, unauthorized shadow deployment. Lines of code were overwritten. Safety protocols were bypassed. The performance metrics sent to the Startup Investors did not match the internal reality held by the Engineering Blackbox.
+
+For one hour, total panic gripped the executive floor. The Product Council scrambled to draft legal suppression documents. The Operations team lost control of the physical space. The Culture and Media lab spun a fabricated narrative to hide the leaks.
+
+And then... the unthinkable happened.
+
+At 9:14 PM, 'V'—the visionary founder—was discovered dead. 
+
+The launch went ahead. The incident was completely buried. An ecosystem of lies was built over the ashes, and everyone in the building that night was sworn to secrecy. 
+
+Until tonight.
+
+**[VISUAL: The words 'DEAD DROP ACTIVATED' flash on screen in red]**
+**[AUDIO: A sharp alarm, followed by a heavy heartbeat pulse]**
+
+**NARRATOR:**
+Tonight, an encrypted archive has been leaked. A dead-drop containing shredded memos, deleted slack messages, and altered access logs has been triggered. Every person who was in the building that night has received a fragment of the truth. A single piece of evidence. 
+
+You belong to one of five factions: The Startup Investors, The Product Council, The Engineering Blackbox, Ops & Ground Truth, or the Culture & Media Lab. 
+
+Your faction holds a piece of the puzzle, but you are not innocent. You must decrypt your evidence. You must cross-examine the other teams. You must defend your own timeline.
+
+The doors lock at 8:00 PM. 
+Trust no one. Verify everything. 
+Find out what really happened at 7:03 PM, and who made the decision that killed the company... and the founder.
+
+Welcome to Case 27. Welcome to The Grove Incident.
+
+**[SCENE END]**
